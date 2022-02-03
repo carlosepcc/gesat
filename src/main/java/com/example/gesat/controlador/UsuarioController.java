@@ -29,4 +29,10 @@ public class UsuarioController {
         return ResponseEntity.ok(service.save(usuario));
     }
 
+    @DeleteMapping
+    public ResponseEntity<Integer [] > delete(@RequestBody Integer [] ids) {
+        service.delete(ids);
+        return ResponseEntity.ok(ids);
+    }
+
 }

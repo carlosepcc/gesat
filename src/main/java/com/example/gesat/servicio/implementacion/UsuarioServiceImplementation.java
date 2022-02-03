@@ -7,6 +7,7 @@ import com.example.gesat.servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,5 +29,12 @@ public class UsuarioServiceImplementation implements UsuarioService {
     @Override
     public UsuarioResponse save(NewUsuarioRequest usuario) {
         return new UsuarioResponse(repository.save(usuario.toUsuario()));
+    }
+
+    @Override
+    public void delete(Integer[] ids) {
+        Arrays.stream(ids).forEach(id ->{
+            repository.deleteById(id);
+        } );
     }
 }

@@ -15,12 +15,12 @@ public class Artefacto extends Entidad {
 		
 	}
 
-	public String getnombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setArtefactonombre(String artefactonombre) {
-		this.nombre = artefactonombre;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public Integer getFase() {
@@ -38,6 +38,5 @@ public class Artefacto extends Entidad {
 	public void setDisciplina(Integer disciplina) {
 		this.disciplina = disciplina;
 	}
-
 	
 }

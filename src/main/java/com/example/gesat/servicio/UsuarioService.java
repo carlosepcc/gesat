@@ -12,4 +12,7 @@ public interface UsuarioService {
     List<UsuarioResponse> listar();
 
     UsuarioResponse save(NewUsuarioRequest usuario);
+
+    void delete(Integer[] ids);
+
 }
