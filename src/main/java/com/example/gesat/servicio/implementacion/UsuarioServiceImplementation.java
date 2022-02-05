@@ -42,9 +42,8 @@ public class UsuarioServiceImplementation implements UsuarioService {
     @Override
     public UsuarioResponse edit(NewUsuarioRequest usuario) {
         Usuario u = usuario.toUsuario();
-        Usuario w = repository.getById(u.getId());
-        w.setRoles(u.getRoles());
-        w.setUsername(u.getUsername());
-        return new UsuarioResponse (w);
+        repository.getById(u.getId()).setUsername(u.getUsername());
+        repository.getById(u.getId()).setRoles(u.getRoles());
+        return new UsuarioResponse (repository.getById(u.getId()));
     }
 }
