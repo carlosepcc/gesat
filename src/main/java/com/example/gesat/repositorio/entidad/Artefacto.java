@@ -7,10 +7,10 @@ public class Artefacto extends Entidad {
 	@Column
 	private String nombre;
 
-	@Column(name = "fase")
+	@Column
 	private Integer fase;
 	
-	@Column(name = "disciplina")
+	@Column
 	private Integer disciplina;
 	
 	public Artefacto() {
