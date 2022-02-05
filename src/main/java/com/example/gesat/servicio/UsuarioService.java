@@ -15,4 +15,6 @@ public interface UsuarioService {
 
     void delete(Integer[] ids);
 
+    UsuarioResponse edit(NewUsuarioRequest usuario);
+
 }

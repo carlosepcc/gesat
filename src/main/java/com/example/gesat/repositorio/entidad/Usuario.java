@@ -28,7 +28,9 @@ public class Usuario extends Entidad {
     public List<Rol> getRoles() {
         return roles;
     }
-
+    public Integer getId(){
+        return this.getId();
+    }
     public String getUsername() {
         return username;
     }

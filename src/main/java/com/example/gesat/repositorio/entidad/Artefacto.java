@@ -1,5 +1,7 @@
 package com.example.gesat.repositorio.entidad;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+@Entity
 public class Artefacto extends Entidad {
 
 	@Column

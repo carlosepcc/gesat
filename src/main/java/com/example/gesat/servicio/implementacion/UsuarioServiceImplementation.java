@@ -3,6 +3,7 @@ package com.example.gesat.servicio.implementacion;
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
 import com.example.gesat.controlador.solicitud.NewUsuarioRequest;
 import com.example.gesat.repositorio.UsuarioRepository;
+import com.example.gesat.repositorio.entidad.Usuario;
 import com.example.gesat.servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,8 +34,17 @@ public class UsuarioServiceImplementation implements UsuarioService {
 
     @Override
     public void delete(Integer[] ids) {
-        Arrays.stream(ids).forEach(id ->{
+        Arrays.stream(ids).forEach(id -> {
             repository.deleteById(id);
-        } );
+        });
+    }
+
+    @Override
+    public UsuarioResponse edit(NewUsuarioRequest usuario) {
+        Usuario u = usuario.toUsuario();
+        Usuario w = repository.getById(u.getId());
+        w.setRoles(u.getRoles());
+        w.setUsername(u.getUsername());
+        return new UsuarioResponse (w);
     }
 }
