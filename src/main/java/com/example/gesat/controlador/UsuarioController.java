@@ -28,9 +28,13 @@ public class UsuarioController {
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario) {
         return ResponseEntity.ok(service.save(usuario));
     }
+    @PutMapping
+    public ResponseEntity<UsuarioResponse> edit(@RequestBody NewUsuarioRequest usuario) {
+        return ResponseEntity.ok(service.edit(usuario));
+    }
 
     @DeleteMapping
-    public ResponseEntity<Integer [] > delete(@RequestBody Integer [] ids) {
+    public ResponseEntity<Integer[]> delete(@RequestBody Integer[] ids) {
         service.delete(ids);
         return ResponseEntity.ok(ids);
     }
