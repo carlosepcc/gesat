@@ -51,6 +51,11 @@ public class ArtefactoServiceImplementation implements ArtefactoService {
             
             return new ArtefactoResponse(repository.getById(u.getId()));
         }
+
+        @Override
+        public ArtefactoResponse listarPorID(Integer id) {
+                return new ArtefactoResponse(repository.getById(id));
+        }
     
 
 }

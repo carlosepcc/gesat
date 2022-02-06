@@ -4,9 +4,7 @@ import com.example.gesat.repositorio.entidad.Artefacto;
 
 public class ArtefactoResponse {
 	private Integer id;
-
     private String nombre;
-
     private Integer fase;
     private Integer disciplina;
 

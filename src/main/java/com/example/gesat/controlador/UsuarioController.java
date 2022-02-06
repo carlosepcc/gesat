@@ -19,7 +19,7 @@ public class UsuarioController {
     @Qualifier("usuarioServiceImplementation")
     private UsuarioService service;
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<UsuarioResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }
@@ -28,6 +28,7 @@ public class UsuarioController {
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario) {
         return ResponseEntity.ok(service.save(usuario));
     }
+   
     @PutMapping
     public ResponseEntity<UsuarioResponse> edit(@RequestBody NewUsuarioRequest usuario) {
         return ResponseEntity.ok(service.edit(usuario));

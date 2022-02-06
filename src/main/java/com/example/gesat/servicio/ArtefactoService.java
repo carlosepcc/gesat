@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ArtefactoService  {
     List<ArtefactoResponse> listar();
-  
+    ArtefactoResponse listarPorID(Integer id);
     ArtefactoResponse save(NewArtefactoRequest artefacto);
-    
     void delete(Integer[] ids);
-    
     ArtefactoResponse edit(NewArtefactoRequest artefacto);
+
+   
 }

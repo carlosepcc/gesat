@@ -20,10 +20,17 @@ public class ArtefactoController {
     @Qualifier("artefactoServiceImplementation")
     ArtefactoService service;
    
-    @GetMapping
+    @GetMapping(path ="/findAll")
     public ResponseEntity<List<ArtefactoResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }
+   
+    @GetMapping(path = "/findById")
+    public ResponseEntity<ArtefactoResponse> listarPorId(Integer id) {
+        return ResponseEntity.ok(service.listarPorID(id));
+    }
+
+
     @PostMapping
     public ResponseEntity<ArtefactoResponse> save(@RequestBody NewArtefactoRequest artefacto) {
         return ResponseEntity.ok(service.save(artefacto));
