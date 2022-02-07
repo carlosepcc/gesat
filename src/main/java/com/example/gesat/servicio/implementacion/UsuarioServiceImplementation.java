@@ -46,4 +46,10 @@ public class UsuarioServiceImplementation implements UsuarioService {
         repository.getById(u.getId()).setRoles(u.getRoles());
         return new UsuarioResponse (repository.getById(u.getId()));
     }
+
+    @Override
+    public UsuarioResponse listarPorID(Integer id) {
+        return new UsuarioResponse(repository.getById(id));
+        
+    }
 }

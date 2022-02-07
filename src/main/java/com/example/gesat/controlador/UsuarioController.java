@@ -19,11 +19,15 @@ public class UsuarioController {
     @Qualifier("usuarioServiceImplementation")
     private UsuarioService service;
 
-    @GetMapping()
+    @GetMapping(path = "/findAll")
     public ResponseEntity<List<UsuarioResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }
 
+    @GetMapping(path = "/findById")
+    public ResponseEntity<UsuarioResponse> listarPorId(Integer id) {
+        return ResponseEntity.ok(service.listarPorID(id));
+    }
     @PostMapping
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario) {
         return ResponseEntity.ok(service.save(usuario));

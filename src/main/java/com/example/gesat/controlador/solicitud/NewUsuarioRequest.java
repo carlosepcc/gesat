@@ -7,7 +7,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class NewUsuarioRequest {
     private String username;
-
+    private String apellidos;
+    private String pass;
     private List<Usuario.Rol> roles;
 
     public NewUsuarioRequest() {
@@ -29,6 +30,8 @@ public class NewUsuarioRequest {
         roles.forEach(rol -> {
             usuario.addRol(rol);
         });
+        usuario.setApellidos(this.apellidos);
+        usuario.setPass(this.pass);
         return usuario;
     }
 }
