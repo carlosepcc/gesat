@@ -15,6 +15,8 @@ public class Usuario extends Entidad {
     private String username;
     @Column
     private String apellidos;
+    @Column
+    private String nombre;
     @Column()
     private String pass;
     @ElementCollection
@@ -28,6 +30,14 @@ public class Usuario extends Entidad {
 
     public String getApellidos() {
         return apellidos;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setApellidos(String apellidos) {

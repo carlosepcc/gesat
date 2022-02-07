@@ -3,17 +3,24 @@ package com.example.gesat.controlador.solicitud;
 import com.example.gesat.repositorio.entidad.Artefacto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 public class NewArtefactoRequest {
 	private String nombre;
 	private Integer fase;
-	private Integer disciplina;
-    
+	private Integer disciplina;  
+    private String descripcion;
     
     public NewArtefactoRequest() {     
      }
+     
+    public String getDescripcion() {return descripcion;}
     public String getNombre() { return nombre; }
     public Integer getFase() { return fase;}
-    public Integer getDisciplina() { return disciplina;}
+    public Integer getDisciplina(){return disciplina;}
+    
     
     @JsonIgnore
 	public Artefacto toArtefacto(){

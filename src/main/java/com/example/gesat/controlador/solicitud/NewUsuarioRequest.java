@@ -10,12 +10,25 @@ public class NewUsuarioRequest {
     private String apellidos;
     private String pass;
     private List<Usuario.Rol> roles;
+    private String nombre;
 
     public NewUsuarioRequest() {
     }
 
     public String getUsername() {
         return username;
+    }
+    
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public String getPass() {
+        return pass;
+    }
+
+    public String getNombre() {
+        return nombre;
     }
 
     public List<Usuario.Rol> getRoles() {
@@ -32,6 +45,7 @@ public class NewUsuarioRequest {
         });
         usuario.setApellidos(this.apellidos);
         usuario.setPass(this.pass);
+        usuario.setNombre(this.nombre);
         return usuario;
     }
 }

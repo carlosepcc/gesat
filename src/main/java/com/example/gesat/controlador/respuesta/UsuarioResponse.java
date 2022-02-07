@@ -13,6 +13,7 @@ public class UsuarioResponse {
     private String apellidos;
     private String pass;
     private List<String> roles;
+    private String nombre;
     public UsuarioResponse() {
     }
 
@@ -23,10 +24,15 @@ public class UsuarioResponse {
         this.roles = usuario.getRoles().parallelStream().map(Enum::name).collect(Collectors.toList());
         this.apellidos=usuario.getApellidos();
         this.pass=usuario.getPass();
+        this.nombre=usuario.getNombre();
     }
 
     public String getApellidos() {
         return apellidos;
+    }
+    
+    public String getNombre() {
+        return nombre;
     }
 
     public String getPass() {
