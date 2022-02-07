@@ -48,7 +48,7 @@ public class ArtefactoServiceImplementation implements ArtefactoService {
             repository.getById(u.getId()).setNombre(u.getNombre());
             repository.getById(u.getId()).setFase(u.getFase());
             repository.getById(u.getId()).setDisciplina(u.getDisciplina());
-            
+            repository.getById(u.getId()).setDescripcion(u.getDescripcion());
             return new ArtefactoResponse(repository.getById(u.getId()));
         }
 

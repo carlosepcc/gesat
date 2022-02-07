@@ -6,19 +6,18 @@ import java.util.List;
 
 @Entity
 public class Usuario extends Entidad {
-
-    public enum Rol {
-        Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor, Usuario
-    }
-
-    @Column
-    private String username;
     @Column
     private String apellidos;
     @Column
     private String nombre;
+    @Column
+    private String username;
     @Column()
     private String pass;
+    
+    public enum Rol {
+        Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor, Usuario
+    }
     @ElementCollection
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
