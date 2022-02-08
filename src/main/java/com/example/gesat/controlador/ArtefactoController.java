@@ -30,7 +30,6 @@ public class ArtefactoController {
         return ResponseEntity.ok(service.listarPorID(id));
     }
 
-
     @PostMapping
     public ResponseEntity<ArtefactoResponse> save(@RequestBody NewArtefactoRequest artefacto) {
         return ResponseEntity.ok(service.save(artefacto));

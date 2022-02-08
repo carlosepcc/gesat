@@ -1,6 +1,5 @@
 package com.example.gesat.controlador;
 import java.util.List;
-
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
 import com.example.gesat.controlador.solicitud.NewHallazgoRequest;
 import com.example.gesat.servicio.HallazgoService;
@@ -17,7 +16,6 @@ public class HallazgoController {
     @Autowired
     @Qualifier("hallazgoServiceImplementation")
     private HallazgoService service;
-
      
     @GetMapping(path = "/findAll")
     public ResponseEntity<List<HallazgoResponse>> listar() {

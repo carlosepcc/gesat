@@ -1,5 +1,4 @@
 package com.example.gesat.controlador;
-
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
 import com.example.gesat.controlador.solicitud.NewUsuarioRequest;
 import com.example.gesat.servicio.UsuarioService;
@@ -7,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
