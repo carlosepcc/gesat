@@ -1,7 +1,8 @@
 package com.example.gesat.controlador;
 import java.util.List;
 import com.example.gesat.controlador.respuesta.ReporteTResponse;
-import com.example.gesat.controlador.solicitud.NewReporteTRequest;
+import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
+import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
 import com.example.gesat.servicio.ReporteTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +18,7 @@ public class ReporteTController {
     @Qualifier("reporteTServiceImplementation")
     private ReporteTService service;
 
-    @GetMapping(path = "/findAll")
+    @GetMapping()
     public ResponseEntity<List<ReporteTResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }
@@ -33,7 +34,7 @@ public class ReporteTController {
     }
    
     @PutMapping
-    public ResponseEntity<ReporteTResponse> edit(@RequestBody NewReporteTRequest reporteT) {
+    public ResponseEntity<ReporteTResponse> edit(@RequestBody UpReporteTRequest reporteT) {
         return ResponseEntity.ok(service.edit(reporteT));
     }
 

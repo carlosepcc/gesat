@@ -1,7 +1,8 @@
 package com.example.gesat.controlador;
 import java.util.List;
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
-import com.example.gesat.controlador.solicitud.NewHallazgoRequest;
+import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
+import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
 import com.example.gesat.servicio.HallazgoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +18,7 @@ public class HallazgoController {
     @Qualifier("hallazgoServiceImplementation")
     private HallazgoService service;
      
-    @GetMapping(path = "/findAll")
+    @GetMapping()
     public ResponseEntity<List<HallazgoResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }
@@ -32,7 +33,7 @@ public class HallazgoController {
     }
    
     @PutMapping
-    public ResponseEntity<HallazgoResponse> edit(@RequestBody NewHallazgoRequest usuario) {
+    public ResponseEntity<HallazgoResponse> edit(@RequestBody UpHallazgoRequest usuario) {
         return ResponseEntity.ok(service.edit(usuario));
     }
 

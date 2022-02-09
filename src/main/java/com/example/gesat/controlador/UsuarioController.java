@@ -1,6 +1,6 @@
 package com.example.gesat.controlador;
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
-import com.example.gesat.controlador.solicitud.NewUsuarioRequest;
+import com.example.gesat.controlador.solicitud.UsuarioSolicitud.NewUsuarioRequest;
 import com.example.gesat.servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +17,7 @@ public class UsuarioController {
     @Qualifier("usuarioServiceImplementation")
     private UsuarioService service;
 
-    @GetMapping(path = "/findAll")
+    @GetMapping()
     public ResponseEntity<List<UsuarioResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }

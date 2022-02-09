@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.gesat.controlador.respuesta.ArtefactoResponse;
-import com.example.gesat.controlador.solicitud.NewArtefactoRequest;
+import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.NewArtefactoRequest;
+import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoRequest;
 import com.example.gesat.repositorio.ArtefactoRepository;
-import com.example.gesat.repositorio.entidad.Artefacto;
 import com.example.gesat.servicio.ArtefactoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,20 +41,14 @@ public class ArtefactoServiceImplementation implements ArtefactoService {
                 });
     }
 
-  
-        @Override
-        public ArtefactoResponse edit(NewArtefactoRequest artefacto) {
-            Artefacto u = artefacto.toArtefacto();
-            repository.getById(u.getId()).setNombre(u.getNombre());
-            repository.getById(u.getId()).setFase(u.getFase());
-            repository.getById(u.getId()).setDisciplina(u.getDisciplina());
-            repository.getById(u.getId()).setDescripcion(u.getDescripcion());
-            return new ArtefactoResponse(repository.getById(u.getId()));
-        }
-
         @Override
         public ArtefactoResponse listarPorID(Integer id) {
                 return new ArtefactoResponse(repository.getById(id));
+        }
+
+        @Override
+        public ArtefactoResponse edit(UpArtefactoRequest artefacto) {
+            return new ArtefactoResponse(repository.save(artefacto.upArtefacto()));
         }
     
 

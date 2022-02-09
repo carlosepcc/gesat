@@ -21,7 +21,7 @@ public class Usuario extends Entidad {
     @ElementCollection
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    @CollectionTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "role_id"))
+    @CollectionTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "owner_id"))
     private List<Rol> roles = new ArrayList<>();
     
     public Usuario() {

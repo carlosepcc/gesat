@@ -1,11 +1,12 @@
-package com.example.gesat.controlador.solicitud;
+package com.example.gesat.controlador.solicitud.HallazgoSolicitud;
 
 import java.util.Date;
 
 import com.example.gesat.repositorio.entidad.Hallazgo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class NewHallazgoRequest {
+public class UpHallazgoRequest {
+    private Integer id;
     private String productoAf;
     private String ubicacion;
     private String descripcion;
@@ -13,9 +14,11 @@ public class NewHallazgoRequest {
     private Date fecha;
     private String impacto;
    
-    public NewHallazgoRequest() {
+    public UpHallazgoRequest() {
     }
-
+    public Integer getId(){
+        return this.id;
+    }
     public String getProductoAf() {
         return productoAf;
     }
@@ -36,8 +39,9 @@ public class NewHallazgoRequest {
     }
 
     @JsonIgnore
-    public Hallazgo toHallazgo(){
+    public Hallazgo upHallazgo(){
         Hallazgo hallazgo= new Hallazgo();
+        hallazgo.setId(id);
         hallazgo.setProductoAf(this.productoAf);
         hallazgo.setUbicacion(this.ubicacion);
         hallazgo.setDescripcion(this.descripcion);

@@ -2,7 +2,8 @@ package com.example.gesat.controlador;
 import java.util.List;
 
 import com.example.gesat.controlador.respuesta.ArtefactoResponse;
-import com.example.gesat.controlador.solicitud.NewArtefactoRequest;
+import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.NewArtefactoRequest;
+import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoRequest;
 import com.example.gesat.servicio.ArtefactoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class ArtefactoController {
     @Qualifier("artefactoServiceImplementation")
     ArtefactoService service;
    
-    @GetMapping(path ="/findAll")
+    @GetMapping()
     public ResponseEntity<List<ArtefactoResponse>> listar() {
         return ResponseEntity.ok(service.listar());
     }
@@ -35,7 +36,7 @@ public class ArtefactoController {
         return ResponseEntity.ok(service.save(artefacto));
     }
     @PutMapping
-    public ResponseEntity<ArtefactoResponse> edit(@RequestBody NewArtefactoRequest artefacto) {
+    public ResponseEntity<ArtefactoResponse> edit(@RequestBody UpArtefactoRequest artefacto) {
         return ResponseEntity.ok(service.edit(artefacto));
     }
 

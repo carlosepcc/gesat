@@ -1,4 +1,4 @@
-package com.example.gesat.controlador.solicitud;
+package com.example.gesat.controlador.solicitud.ArtefactoSolicitud;
 
 import com.example.gesat.repositorio.entidad.Artefacto;
 import com.fasterxml.jackson.annotation.JsonIgnore;

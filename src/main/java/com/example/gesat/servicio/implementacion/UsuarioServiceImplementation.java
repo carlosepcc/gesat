@@ -1,9 +1,8 @@
 package com.example.gesat.servicio.implementacion;
 
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
-import com.example.gesat.controlador.solicitud.NewUsuarioRequest;
+import com.example.gesat.controlador.solicitud.UsuarioSolicitud.NewUsuarioRequest;
 import com.example.gesat.repositorio.UsuarioRepository;
-import com.example.gesat.repositorio.entidad.Usuario;
 import com.example.gesat.servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,18 +37,15 @@ public class UsuarioServiceImplementation implements UsuarioService {
             repository.deleteById(id);
         });
     }
-
-    @Override
-    public UsuarioResponse edit(NewUsuarioRequest usuario) {
-        Usuario u = usuario.toUsuario();
-        repository.getById(u.getId()).setUsername(u.getUsername());
-        repository.getById(u.getId()).setRoles(u.getRoles());
-        return new UsuarioResponse (repository.getById(u.getId()));
-    }
-
     @Override
     public UsuarioResponse listarPorID(Integer id) {
         return new UsuarioResponse(repository.getById(id));
         
+    }
+
+    @Override
+    public UsuarioResponse edit(NewUsuarioRequest usuario) {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

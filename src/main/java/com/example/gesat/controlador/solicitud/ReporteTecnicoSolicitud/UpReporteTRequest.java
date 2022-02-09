@@ -1,8 +1,9 @@
-package com.example.gesat.controlador.solicitud;
+package com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.example.gesat.repositorio.entidad.ReporteT;
 
-public class NewReporteTRequest {
+public class UpReporteTRequest {
+    private Integer id;
     private String nombre;
     private String descripcion;
     private String estado;
@@ -11,9 +12,11 @@ public class NewReporteTRequest {
     private Integer attribute;
     
     
-    public NewReporteTRequest() {
+    public UpReporteTRequest() {
     }
-
+    public Integer getId(){
+        return this.id;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -34,8 +37,9 @@ public class NewReporteTRequest {
         return attribute;
     }
     @JsonIgnore
-    public ReporteT toReporteT(){
+    public ReporteT upReporteT(){
         ReporteT reporte= new ReporteT();
+        reporte.setId(this.id);
         reporte.setNombre(this.nombre);
         reporte.setDescripcion(this.descripcion);
         reporte.setEstado(this.estado);

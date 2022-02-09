@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.example.gesat.controlador.respuesta.ReporteTResponse;
-import com.example.gesat.controlador.solicitud.NewReporteTRequest;
+import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
+import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
 import com.example.gesat.repositorio.ReporteTRepository;
-import com.example.gesat.repositorio.entidad.ReporteT;
 import com.example.gesat.servicio.ReporteTService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,22 +41,14 @@ public class ReporteTServiceImplementation implements ReporteTService{
                 });
     }
 
-
-    @Override
-    public ReporteTResponse edit(NewReporteTRequest reporte) {
-        ReporteT u = reporte.toReporteT();
-        repository.getById(u.getId()).setNombre(u.getNombre());
-        repository.getById(u.getId()).setAttribute(u.getAttribute());
-        repository.getById(u.getId()).setDescripcion(u.getDescripcion());
-        repository.getById(u.getId()).setEvaluacion(u.getEvaluacion());
-        repository.getById(u.getId()).setEstado(u.getEstado());
-        repository.getById(u.getId()).setTipo(u.getTipo());
-        return  new ReporteTResponse(repository.getById(u.getId()));
-    }
-
     @Override
     public ReporteTResponse listarPorID(Integer id) {
         return new ReporteTResponse(repository.getById(id));
+    }
+
+    @Override
+    public ReporteTResponse edit(UpReporteTRequest reporte) {
+      return new ReporteTResponse(repository.save(reporte.upReporteT()));
     }
     
 }

@@ -1,4 +1,4 @@
-package com.example.gesat.controlador.solicitud;
+package com.example.gesat.controlador.solicitud.UsuarioSolicitud;
 
 import java.util.List;
 

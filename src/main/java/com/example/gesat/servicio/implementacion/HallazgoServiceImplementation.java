@@ -3,9 +3,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
-import com.example.gesat.controlador.solicitud.NewHallazgoRequest;
+import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
+import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
 import com.example.gesat.repositorio.HallazgoRepository;
-import com.example.gesat.repositorio.entidad.Hallazgo;
 import com.example.gesat.servicio.HallazgoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,15 +44,8 @@ public class HallazgoServiceImplementation implements HallazgoService {
     }
 
     @Override
-    public HallazgoResponse edit(NewHallazgoRequest hallazgo) {
-        Hallazgo u = hallazgo.toHallazgo();
-        repository.getById(u.getId()).setProductoAf(u.getProductoAf());
-        repository.getById(u.getId()).setDescripcion(u.getDescripcion());
-        repository.getById(u.getId()).setImpacto(u.getImpacto());
-        repository.getById(u.getId()).setFecha(u.getFecha());
-        repository.getById(u.getId()).setTipo(u.getTipo());
-        
-        return new HallazgoResponse(repository.getById(u.getId()));
+    public HallazgoResponse edit(UpHallazgoRequest artefacto) {
+         return new HallazgoResponse(repository.save(artefacto.upHallazgo()));
     }
     
 }
