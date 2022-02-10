@@ -2,8 +2,9 @@ package com.example.gesat.servicio.implementacion;
 
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
 import com.example.gesat.controlador.solicitud.UsuarioSolicitud.NewUsuarioRequest;
-import com.example.gesat.repositorio.UsuarioRepository;
-import com.example.gesat.servicio.UsuarioService;
+import com.example.gesat.controlador.solicitud.UsuarioSolicitud.UpUsuarioRequest;
+import com.example.gesat.repositorio.IUserRepository;
+import com.example.gesat.servicio.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +13,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UsuarioServiceImplementation implements UsuarioService {
+public class IUserService implements UserService {
 
     @Autowired
-    private UsuarioRepository repository;
+    private IUserRepository repository;
 
     @Override
     public List<UsuarioResponse> listar() {
@@ -44,8 +45,7 @@ public class UsuarioServiceImplementation implements UsuarioService {
     }
 
     @Override
-    public UsuarioResponse edit(NewUsuarioRequest usuario) {
-        // TODO Auto-generated method stub
-        return null;
+    public UsuarioResponse edit(UpUsuarioRequest usuario) {
+        return new UsuarioResponse(repository.save(usuario.upUsuario()));
     }
 }

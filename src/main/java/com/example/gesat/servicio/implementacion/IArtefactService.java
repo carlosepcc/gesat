@@ -7,17 +7,17 @@ import java.util.stream.Collectors;
 import com.example.gesat.controlador.respuesta.ArtefactoResponse;
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.NewArtefactoRequest;
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoRequest;
-import com.example.gesat.repositorio.ArtefactoRepository;
-import com.example.gesat.servicio.ArtefactoService;
+import com.example.gesat.repositorio.IArtefactRepository;
+import com.example.gesat.servicio.ArtefactService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ArtefactoServiceImplementation implements ArtefactoService {
+public class IArtefactService implements ArtefactService {
 
     @Autowired
-    private ArtefactoRepository repository;
+    private IArtefactRepository repository;
 
     @Override
     public List<ArtefactoResponse> listar() {

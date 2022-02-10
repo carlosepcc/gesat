@@ -3,7 +3,7 @@ import java.util.List;
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
-import com.example.gesat.servicio.HallazgoService;
+import com.example.gesat.servicio.HallazgoTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 public class HallazgoController {
 
     @Autowired
-    @Qualifier("hallazgoServiceImplementation")
-    private HallazgoService service;
+    @Qualifier("IHallazgoTService")
+    private HallazgoTService service;
      
     @GetMapping()
     public ResponseEntity<List<HallazgoResponse>> listar() {

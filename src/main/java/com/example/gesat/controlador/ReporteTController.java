@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class ReporteTController {
     
     @Autowired
-    @Qualifier("reporteTServiceImplementation")
+    @Qualifier("IReporteTService")
     private ReporteTService service;
 
     @GetMapping()

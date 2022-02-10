@@ -1,10 +1,11 @@
 package com.example.gesat.repositorio;
 
-import com.example.gesat.repositorio.entidad.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.example.gesat.repositorio.entidad.Artefacto;
+
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+public interface IArtefactRepository extends JpaRepository<Artefacto, Integer> {
 
 }

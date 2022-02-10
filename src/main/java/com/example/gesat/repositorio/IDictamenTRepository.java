@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface DictamenTRepository extends JpaRepository<DictamenT,Integer> {
+public interface IDictamenTRepository extends JpaRepository<DictamenT,Integer> {
     
 }

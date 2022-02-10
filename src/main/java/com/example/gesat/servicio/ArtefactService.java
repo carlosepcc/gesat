@@ -8,7 +8,7 @@ import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoReq
 
 import org.springframework.stereotype.Service;
 @Service
-public interface ArtefactoService  {
+public interface ArtefactService  {
     List<ArtefactoResponse> listar();
     ArtefactoResponse listarPorID(Integer id);
     ArtefactoResponse save(NewArtefactoRequest artefacto);

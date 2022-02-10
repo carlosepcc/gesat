@@ -19,6 +19,7 @@ public class ReporteTResponse {
         this.estado=reporte.getEstado();
         this.tipo=reporte.getTipo();
         this.attribute=reporte.getAttribute();
+        this.evaluacion=reporte.getEvaluacion();
     }
     
     public Integer getId() {

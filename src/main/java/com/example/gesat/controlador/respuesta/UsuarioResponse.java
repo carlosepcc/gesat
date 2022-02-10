@@ -1,6 +1,7 @@
 package com.example.gesat.controlador.respuesta;
 
-import com.example.gesat.repositorio.entidad.Usuario;
+import com.example.gesat.repositorio.entidad.Rol;
+import com.example.gesat.repositorio.entidad.User;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,10 +18,10 @@ public class UsuarioResponse {
     public UsuarioResponse() {
     }
 
-    public UsuarioResponse(Usuario usuario) {
+    public UsuarioResponse(User usuario) {
         this.id = usuario.getId();
         this.username = usuario.getUsername();
-        usuario.getRoles().remove(Usuario.Rol.Usuario);
+        usuario.getRoles().remove(Rol.Usuario);
         this.roles = usuario.getRoles().parallelStream().map(Enum::name).collect(Collectors.toList());
         this.apellidos=usuario.getApellidos();
         this.pass=usuario.getPass();

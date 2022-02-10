@@ -7,7 +7,7 @@ import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoReque
 import org.springframework.stereotype.Service;
 
 @Service
-public interface HallazgoService  {
+public interface HallazgoTService  {
     List<HallazgoResponse> listar();
     HallazgoResponse listarPorID(Integer id);
     HallazgoResponse save(NewHallazgoRequest artefacto);

@@ -5,16 +5,16 @@ import java.util.stream.Collectors;
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
-import com.example.gesat.repositorio.HallazgoRepository;
-import com.example.gesat.servicio.HallazgoService;
+import com.example.gesat.repositorio.IHallazgoRepository;
+import com.example.gesat.servicio.HallazgoTService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
-public class HallazgoServiceImplementation implements HallazgoService {
+public class IHallazgoTService implements HallazgoTService {
 
     @Autowired
-    HallazgoRepository repository;
+    IHallazgoRepository repository;
 
     @Override
     public List<HallazgoResponse> listar() {

@@ -1,7 +1,7 @@
 package com.example.gesat.repositorio.entidad;
 import java.util.Date;
 import javax.persistence.*;
-
+@Table(name = "hallasgos")
 @Entity
 public class Hallazgo extends Entidad{
     @Column

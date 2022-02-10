@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HallazgoRepository extends JpaRepository<Hallazgo,Integer> {
+public interface IHallazgoRepository extends JpaRepository<Hallazgo,Integer> {
     
 }

@@ -7,17 +7,17 @@ import java.util.stream.Collectors;
 import com.example.gesat.controlador.respuesta.ReporteTResponse;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
-import com.example.gesat.repositorio.ReporteTRepository;
+import com.example.gesat.repositorio.IReporteTRepository;
 import com.example.gesat.servicio.ReporteTService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ReporteTServiceImplementation implements ReporteTService{
+public class IReporteTService implements ReporteTService{
 
     @Autowired
-    private ReporteTRepository repository;
+    private IReporteTRepository repository;
 
     @Override
     public List<ReporteTResponse> listar() {

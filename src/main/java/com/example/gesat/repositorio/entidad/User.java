@@ -1,30 +1,24 @@
 package com.example.gesat.repositorio.entidad;
-
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
-
+@Table(name= "users")
 @Entity
-public class Usuario extends Entidad {
-    @Column
-    private String apellidos;
+public class User extends Entidad {
+   
     @Column
     private String nombre;
     @Column
+    private String apellidos;
+    @Column
     private String username;
-    @Column()
+    @Column
     private String pass;
-    
-    public enum Rol {
-        Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor, Usuario
-    }
-    @ElementCollection
+    @Column
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
-    @CollectionTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "owner_id"))
-    private List<Rol> roles = new ArrayList<>();
-    
-    public Usuario() {
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<Rol> roles;
+
+    public User() {
     }
 
     public String getApellidos() {
@@ -62,7 +56,6 @@ public class Usuario extends Entidad {
     public Integer getId() {
         return this.getId();
     }
-
     public String getUsername() {
         return username;
     }

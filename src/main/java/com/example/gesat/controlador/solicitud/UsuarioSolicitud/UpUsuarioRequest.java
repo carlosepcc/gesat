@@ -6,14 +6,19 @@ import com.example.gesat.repositorio.entidad.Rol;
 import com.example.gesat.repositorio.entidad.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class NewUsuarioRequest {
+public class UpUsuarioRequest {
+    private Integer id;
     private String username;
     private String apellidos;
     private String pass;
     private List<Rol> roles;
     private String nombre;
 
-    public NewUsuarioRequest() {
+    public UpUsuarioRequest() {
+    }
+    
+    public Integer getId() {
+        return id;
     }
 
     public String getUsername() {
@@ -35,10 +40,10 @@ public class NewUsuarioRequest {
     public List<Rol> getRoles() {
         return roles;
     }
-
     @JsonIgnore
-    public User toUsuario() {
+    public User upUsuario() {
         User usuario = new User();
+        usuario.getId();
         usuario.setUsername(this.username);
         usuario.addRol(Rol.Usuario);
         roles.forEach(rol -> {
