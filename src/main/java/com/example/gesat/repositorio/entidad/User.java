@@ -1,10 +1,13 @@
 package com.example.gesat.repositorio.entidad;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+
 @Table(name= "users")
 @Entity
 public class User extends Entidad {
-   
+    public enum Rol {Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor, Usuario}
+
     @Column
     private String nombre;
     @Column
@@ -13,10 +16,12 @@ public class User extends Entidad {
     private String username;
     @Column
     private String pass;
-    @Column
-    @Enumerated(EnumType.STRING)
+
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<Rol> roles;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "role_id"))
+    private List<Rol> roles = new ArrayList<>();
 
     public User() {
     }
@@ -51,10 +56,6 @@ public class User extends Entidad {
 
     public List<Rol> getRoles() {
         return roles;
-    }
-
-    public Integer getId() {
-        return this.getId();
     }
     public String getUsername() {
         return username;

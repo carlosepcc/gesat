@@ -1,6 +1,4 @@
 package com.example.gesat.controlador.respuesta;
-
-import com.example.gesat.repositorio.entidad.Rol;
 import com.example.gesat.repositorio.entidad.User;
 
 import java.util.List;
@@ -21,7 +19,7 @@ public class UsuarioResponse {
     public UsuarioResponse(User usuario) {
         this.id = usuario.getId();
         this.username = usuario.getUsername();
-        usuario.getRoles().remove(Rol.Usuario);
+        usuario.getRoles().remove(User.Rol.Usuario);
         this.roles = usuario.getRoles().parallelStream().map(Enum::name).collect(Collectors.toList());
         this.apellidos=usuario.getApellidos();
         this.pass=usuario.getPass();

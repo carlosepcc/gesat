@@ -1,8 +1,6 @@
 package com.example.gesat.controlador.solicitud.UsuarioSolicitud;
 
 import java.util.List;
-
-import com.example.gesat.repositorio.entidad.Rol;
 import com.example.gesat.repositorio.entidad.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -10,7 +8,7 @@ public class NewUsuarioRequest {
     private String username;
     private String apellidos;
     private String pass;
-    private List<Rol> roles;
+    private List<User.Rol> roles;
     private String nombre;
 
     public NewUsuarioRequest() {
@@ -32,7 +30,7 @@ public class NewUsuarioRequest {
         return nombre;
     }
 
-    public List<Rol> getRoles() {
+    public List<User.Rol> getRoles() {
         return roles;
     }
 
@@ -40,7 +38,7 @@ public class NewUsuarioRequest {
     public User toUsuario() {
         User usuario = new User();
         usuario.setUsername(this.username);
-        usuario.addRol(Rol.Usuario);
+        usuario.addRol(User.Rol.Usuario);
         roles.forEach(rol -> {
             usuario.addRol(rol);
         });
