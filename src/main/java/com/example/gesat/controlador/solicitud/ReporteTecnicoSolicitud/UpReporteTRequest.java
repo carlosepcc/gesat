@@ -9,7 +9,6 @@ public class UpReporteTRequest {
     private Integer id;
     private String nombre;
     private String descripcion;
-    private String estado;
     private String tipo;
     private Date fechaI;
     private Date fechaC;
@@ -28,9 +27,6 @@ public class UpReporteTRequest {
  
     public String getDescripcion() {
         return descripcion;
-    }
-    public String getEstado() {
-        return estado;
     }
     public String getTipo() {
         return tipo;
@@ -53,7 +49,6 @@ public class UpReporteTRequest {
         reporte.setId(this.id);
         reporte.setNombre(this.nombre);
         reporte.setDescripcion(this.descripcion);
-        reporte.setEstado(this.estado);
         reporte.setTipo(this.tipo);
         reporte.setFechaI(this.fechaI);
         reporte.setFechaC(this.fechaC);

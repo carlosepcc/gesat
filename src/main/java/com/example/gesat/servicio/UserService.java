@@ -12,6 +12,7 @@ import java.util.List;
 public interface UserService {
 
     List<UsuarioResponse> findAll();
+    List<UsuarioResponse> findByRol(String rol);
     UsuarioResponse findByID(Integer id);
     UsuarioResponse save(NewUsuarioRequest usuario);
     void delete(Integer[] ids);

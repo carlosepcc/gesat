@@ -6,8 +6,10 @@ import com.example.gesat.controlador.solicitud.UsuarioSolicitud.UpUsuarioRequest
 import com.example.gesat.repositorio.IUserRepository;
 import com.example.gesat.servicio.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +18,7 @@ import java.util.stream.Collectors;
 public class IUserService implements UserService {
 
     @Autowired
+    @Qualifier("IUserRepository")
     private IUserRepository repository;
 
     @Override
@@ -48,4 +51,19 @@ public class IUserService implements UserService {
     public UsuarioResponse edit(UpUsuarioRequest usuario) {
         return new UsuarioResponse(repository.save(usuario.upUsuario()));
     }
+
+    @Override
+    public List<UsuarioResponse> findByRol(String rol) {
+        List<UsuarioResponse> u = new ArrayList<UsuarioResponse>();
+        this.findAll().parallelStream()
+                .forEach(user -> {
+                    user.getRoles().forEach(r -> {
+                        if (r.equals(rol))
+                            u.add(user);
+                    });
+                });
+        return u;
+
+  
+}
 }

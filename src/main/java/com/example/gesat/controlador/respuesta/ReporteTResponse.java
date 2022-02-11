@@ -1,5 +1,7 @@
 package com.example.gesat.controlador.respuesta;
 
+import java.util.Date;
+
 import com.example.gesat.repositorio.entidad.ReporteT;
 
 public class ReporteTResponse {
@@ -10,6 +12,8 @@ public class ReporteTResponse {
     private String tipo;
     private Integer evaluacion;
     private Integer attribute;
+    private Date fechaI;
+    private Date fechaC;
     
     
     public ReporteTResponse(ReporteT reporte) {
@@ -18,6 +22,8 @@ public class ReporteTResponse {
         this.descripcion=reporte.getDescripcion();
         this.estado=reporte.getEstado();
         this.tipo=reporte.getTipo();
+        this.fechaI=reporte.getFechaI();
+        this.fechaC=reporte.getFechaC();
         this.attribute=reporte.getAttribute();
         this.evaluacion=reporte.getEvaluacion();
     }
@@ -36,6 +42,13 @@ public class ReporteTResponse {
     }
     public String getTipo() {
         return tipo;
+    }
+    
+    public Date getFechaI() {
+        return fechaI;
+    }
+    public Date getFechaC() {
+        return fechaC;
     }
     public Integer getEvaluacion() {
         return evaluacion;

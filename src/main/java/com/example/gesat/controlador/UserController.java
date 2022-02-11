@@ -27,6 +27,10 @@ public class UserController {
     public ResponseEntity<UsuarioResponse> findByID(Integer id) {
         return ResponseEntity.ok(service.findByID(id));
     }
+    @GetMapping(path = "/findByRol")
+    public ResponseEntity<List<UsuarioResponse>> findByRol(String rol) {
+        return ResponseEntity.ok(service.findByRol(rol));
+    }
     @PostMapping
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario) {
         return ResponseEntity.ok(service.save(usuario));
