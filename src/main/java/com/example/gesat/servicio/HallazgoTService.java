@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface HallazgoTService  {
-    List<HallazgoResponse> listar();
-    HallazgoResponse listarPorID(Integer id);
+    List<HallazgoResponse> findAll();
+    HallazgoResponse findByID(Integer id);
     HallazgoResponse save(NewHallazgoRequest artefacto);
     void delete(Integer[] ids);
     HallazgoResponse edit(UpHallazgoRequest artefacto);

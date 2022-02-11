@@ -22,13 +22,13 @@ public class ArtefactController {
     private ArtefactService service;
    
     @GetMapping()
-    public ResponseEntity<List<ArtefactoResponse>> listar() {
-        return ResponseEntity.ok(service.listar());
+    public ResponseEntity<List<ArtefactoResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll());
     }
    
     @GetMapping(path = "/findById")
-    public ResponseEntity<ArtefactoResponse> listarPorId(Integer id) {
-        return ResponseEntity.ok(service.listarPorID(id));
+    public ResponseEntity<ArtefactoResponse> findByID(Integer id) {
+        return ResponseEntity.ok(service.findByID(id));
     }
 
     @PostMapping

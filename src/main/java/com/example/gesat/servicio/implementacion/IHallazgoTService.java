@@ -17,7 +17,7 @@ public class IHallazgoTService implements HallazgoTService {
     IHallazgoRepository repository;
 
     @Override
-    public List<HallazgoResponse> listar() {
+    public List<HallazgoResponse> findAll() {
         return repository
                 .findAll()
                 .parallelStream()
@@ -26,7 +26,7 @@ public class IHallazgoTService implements HallazgoTService {
     }
 
     @Override
-    public HallazgoResponse listarPorID(Integer id) {
+    public HallazgoResponse findByID(Integer id) {
         return new HallazgoResponse(repository.getById(id));
     }
 

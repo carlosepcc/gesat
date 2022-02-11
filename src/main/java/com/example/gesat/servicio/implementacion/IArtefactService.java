@@ -20,7 +20,7 @@ public class IArtefactService implements ArtefactService {
     private IArtefactRepository repository;
 
     @Override
-    public List<ArtefactoResponse> listar() {
+    public List<ArtefactoResponse> findAll() {
         return repository
                 .findAll()
                 .parallelStream()
@@ -42,7 +42,7 @@ public class IArtefactService implements ArtefactService {
     }
 
         @Override
-        public ArtefactoResponse listarPorID(Integer id) {
+        public ArtefactoResponse findByID(Integer id) {
                 return new ArtefactoResponse(repository.getById(id));
         }
 

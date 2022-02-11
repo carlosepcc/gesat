@@ -20,7 +20,7 @@ public class IReporteTService implements ReporteTService{
     private IReporteTRepository repository;
 
     @Override
-    public List<ReporteTResponse> listar() {
+    public List<ReporteTResponse> findAll() {
         return repository
                 .findAll()
                 .parallelStream()
@@ -42,7 +42,7 @@ public class IReporteTService implements ReporteTService{
     }
 
     @Override
-    public ReporteTResponse listarPorID(Integer id) {
+    public ReporteTResponse findByID(Integer id) {
         return new ReporteTResponse(repository.getById(id));
     }
 

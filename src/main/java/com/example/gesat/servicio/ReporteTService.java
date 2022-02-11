@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ReporteTService {
     
-    List<ReporteTResponse> listar();
-    ReporteTResponse listarPorID(Integer id);
+    List<ReporteTResponse> findAll();
+    ReporteTResponse findByID(Integer id);
     ReporteTResponse save(NewReporteTRequest reporteT);
     void delete(Integer[] ids);
     ReporteTResponse edit(UpReporteTRequest reporteT);

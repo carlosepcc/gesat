@@ -19,13 +19,13 @@ public class HallazgoController {
     private HallazgoTService service;
      
     @GetMapping()
-    public ResponseEntity<List<HallazgoResponse>> listar() {
-        return ResponseEntity.ok(service.listar());
+    public ResponseEntity<List<HallazgoResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(path="/findById")
-    public ResponseEntity<HallazgoResponse> listarPorId(Integer id) {
-        return ResponseEntity.ok(service.listarPorID(id));
+    public ResponseEntity<HallazgoResponse> findByID(Integer id) {
+        return ResponseEntity.ok(service.findByID(id));
     }
     @PostMapping
     public ResponseEntity<HallazgoResponse> save(@RequestBody NewHallazgoRequest usuario) {

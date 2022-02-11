@@ -19,7 +19,7 @@ public class IUserService implements UserService {
     private IUserRepository repository;
 
     @Override
-    public List<UsuarioResponse> listar() {
+    public List<UsuarioResponse> findAll() {
         return repository
                 .findAll()
                 .parallelStream()
@@ -39,7 +39,7 @@ public class IUserService implements UserService {
         });
     }
     @Override
-    public UsuarioResponse listarPorID(Integer id) {
+    public UsuarioResponse findByID(Integer id) {
         return new UsuarioResponse(repository.getById(id));
         
     }

@@ -19,13 +19,13 @@ public class UserController {
     private UserService service;
 
     @GetMapping()
-    public ResponseEntity<List<UsuarioResponse>> listar() {
-        return ResponseEntity.ok(service.listar());
+    public ResponseEntity<List<UsuarioResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(path = "/findById")
-    public ResponseEntity<UsuarioResponse> listarPorId(Integer id) {
-        return ResponseEntity.ok(service.listarPorID(id));
+    public ResponseEntity<UsuarioResponse> findByID(Integer id) {
+        return ResponseEntity.ok(service.findByID(id));
     }
     @PostMapping
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario) {

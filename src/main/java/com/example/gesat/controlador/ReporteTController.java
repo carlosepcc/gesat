@@ -19,13 +19,13 @@ public class ReporteTController {
     private ReporteTService service;
 
     @GetMapping()
-    public ResponseEntity<List<ReporteTResponse>> listar() {
-        return ResponseEntity.ok(service.listar());
+    public ResponseEntity<List<ReporteTResponse>> findAll() {
+        return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(path="/findById")
-    public ResponseEntity<ReporteTResponse> listarPorId(Integer id) {
-        return ResponseEntity.ok(service.listarPorID(id));
+    public ResponseEntity<ReporteTResponse> findByID(Integer id) {
+        return ResponseEntity.ok(service.findByID(id));
     }
 
     @PostMapping

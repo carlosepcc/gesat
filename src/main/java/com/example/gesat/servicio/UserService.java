@@ -11,8 +11,8 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    List<UsuarioResponse> listar();
-    UsuarioResponse listarPorID(Integer id);
+    List<UsuarioResponse> findAll();
+    UsuarioResponse findByID(Integer id);
     UsuarioResponse save(NewUsuarioRequest usuario);
     void delete(Integer[] ids);
     UsuarioResponse edit(UpUsuarioRequest usuario);
