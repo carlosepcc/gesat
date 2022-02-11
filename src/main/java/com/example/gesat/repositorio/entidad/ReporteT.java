@@ -1,5 +1,7 @@
 package com.example.gesat.repositorio.entidad;
 
+import java.util.Date;
+
 import javax.persistence.*;
 @Table(name = "reporte_Tecnico")
 @Entity
@@ -12,6 +14,10 @@ public class ReporteT extends Entidad{
     private String estado;
     @Column
     private String tipo;
+    @Column
+    private Date fechaI;
+    @Column
+    private Date fechaC;
     @Column
     private Integer evaluacion;
     @Column
@@ -46,6 +52,23 @@ public class ReporteT extends Entidad{
 
     public String getTipo() {
         return tipo;
+    }
+    
+
+    public Date getFechaI() {
+        return fechaI;
+    }
+
+    public void setFechaI(Date fechaI) {
+        this.fechaI = fechaI;
+    }
+
+    public Date getFechaC() {
+        return fechaC;
+    }
+
+    public void setFechaC(Date fechaC) {
+        this.fechaC = fechaC;
     }
 
     public void setTipo(String tipo) {
