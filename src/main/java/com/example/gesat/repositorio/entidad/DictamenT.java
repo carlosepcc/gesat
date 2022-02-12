@@ -5,11 +5,7 @@ import javax.persistence.*;
 @Entity
 public class DictamenT extends Entidad {
     @Column
-    private String nombre;
-    @Column
-    private String nombreP;
-    @Column
-    private String nombreEp;
+    private String nombreP;    
     @Column
     private String descripcion;
     @Column
@@ -18,16 +14,13 @@ public class DictamenT extends Entidad {
     private Integer cantPortMej;
     @Column
     private String estadoT;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="nombre_ep")
+    private User nombreEp;
+    
     
     public DictamenT() {
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getNombreP() {
@@ -38,11 +31,11 @@ public class DictamenT extends Entidad {
         this.nombreP = nombreP;
     }
 
-    public String getNombreEp() {
+    public User getNombreEp() {
         return nombreEp;
     }
 
-    public void setNombreEp(String nombreEp) {
+    public void setNombreEp(User nombreEp) {
         this.nombreEp = nombreEp;
     }
 
@@ -77,7 +70,5 @@ public class DictamenT extends Entidad {
     public void setEstadoT(String estadoT) {
         this.estadoT = estadoT;
     }
-
-    
 
 }
