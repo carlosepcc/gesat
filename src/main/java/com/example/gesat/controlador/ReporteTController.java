@@ -1,7 +1,9 @@
 package com.example.gesat.controlador;
 import java.util.List;
-import com.example.gesat.controlador.respuesta.ReporteTResponse;
-import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisor;
+
+import com.example.gesat.controlador.respuesta.ReporteTRespuesta.EstadoRevisorResponse;
+import com.example.gesat.controlador.respuesta.ReporteTRespuesta.ReporteTResponse;
+import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisorRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
 import com.example.gesat.servicio.EstadoRevisorService;
@@ -25,12 +27,12 @@ public class ReporteTController {
    private EstadoRevisorService estadoRevisorservice;
    
     @GetMapping()
-    public ResponseEntity<List<ReporteTResponse>> findAll() {
+    public ResponseEntity<List<EstadoRevisorResponse>> findAll() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(path="/findById")
-    public ResponseEntity<ReporteTResponse> findByID(Integer id) {
+    public ResponseEntity<EstadoRevisorResponse> findByID(Integer id) {
         return ResponseEntity.ok(service.findByID(id));
     }
 
@@ -38,9 +40,9 @@ public class ReporteTController {
     public ResponseEntity<ReporteTResponse> save(@RequestBody NewReporteTRequest reporteT) {
         return ResponseEntity.ok(service.save(reporteT));
     }
-    @PutMapping(path = "/agregarEstadoRevisor")
-        public ResponseEntity<ReporteTResponse> agregarEstadoRevisor(@RequestBody AddEstadoRevisor reporteT) {
-            return ResponseEntity.ok(estadoRevisorservice.agregarEstadoRevisor(reporteT));
+    @PostMapping(path = "/agregarEstadoRevisor")
+        public ResponseEntity<EstadoRevisorResponse> agregarEstadoRevisor(@RequestBody AddEstadoRevisorRequest reporte) {
+            return ResponseEntity.ok(estadoRevisorservice.agregarEstadoRevisor(reporte));
     }
    
     @PutMapping

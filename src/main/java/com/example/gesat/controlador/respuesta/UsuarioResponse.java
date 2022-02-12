@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 public class UsuarioResponse {
 
     private Integer id;
-
     private String username;
     private String apellidos;
     private String pass;

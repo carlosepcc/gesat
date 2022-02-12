@@ -1,14 +1,16 @@
-package com.example.gesat.controlador.respuesta;
+package com.example.gesat.controlador.respuesta.ReporteTRespuesta;
 
 import java.util.Date;
 
 import com.example.gesat.repositorio.entidad.ReporteT;
+import com.example.gesat.repositorio.entidad.User;
 
-public class ReporteTResponse {
+public class EstadoRevisorResponse {
     private Integer id;
     private String nombre;
     private String descripcion;
     private String estado;
+    private User revisor;
     private String tipo;
     private Integer evaluacion;
     private Integer attribute;
@@ -16,16 +18,19 @@ public class ReporteTResponse {
     private Date fechaC;
     
     
-    public ReporteTResponse(ReporteT reporte) {
+    
+    public EstadoRevisorResponse(ReporteT reporte) {
         this.id=reporte.getId();
         this.nombre=reporte.getNombre();
         this.descripcion=reporte.getDescripcion();
         this.estado=reporte.getEstado();
+        this.revisor=reporte.getRevisor();
         this.tipo=reporte.getTipo();
         this.fechaI=reporte.getFechaI();
         this.fechaC=reporte.getFechaC();
         this.attribute=reporte.getAttribute();
         this.evaluacion=reporte.getEvaluacion();
+        
     }
     
     public Integer getId() {
@@ -43,13 +48,18 @@ public class ReporteTResponse {
     public String getTipo() {
         return tipo;
     }
-    
+
     public Date getFechaI() {
         return fechaI;
     }
     public Date getFechaC() {
         return fechaC;
     }
+    
+    public User getRevisor() {
+        return revisor;
+    }
+
     public Integer getEvaluacion() {
         return evaluacion;
     }

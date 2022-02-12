@@ -68,5 +68,4 @@ public class User extends Entidad {
     public void addRol(Rol rol) {
         this.roles.add(rol);
     }
-    
 }

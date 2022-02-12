@@ -23,6 +23,7 @@ public class NewArtefactoRequest {
         artefacto.setNombre(this.nombre);
         artefacto.setFase(this.fase);
         artefacto.setDisciplina(this.disciplina);
+        artefacto.setDescripcion(this.descripcion);
         return artefacto;
     }
 

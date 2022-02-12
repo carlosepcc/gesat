@@ -88,6 +88,16 @@ public class ReporteT extends Entidad{
     public void setAttribute(Integer attribute) {
         this.attribute = attribute;
     }
-    
-    
+    public User getRevisor() {
+        return revisor;
+    }
+
+    public void setRevisor(User revisor) {
+        this.revisor = revisor;
+    }
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="revisor_id")
+    private User revisor;
+
 }

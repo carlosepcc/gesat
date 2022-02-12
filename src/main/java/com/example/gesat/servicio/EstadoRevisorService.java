@@ -1,10 +1,10 @@
 package com.example.gesat.servicio;
-import com.example.gesat.controlador.respuesta.ReporteTResponse;
-import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisor;
+import com.example.gesat.controlador.respuesta.ReporteTRespuesta.EstadoRevisorResponse;
+import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisorRequest;
 
 import org.springframework.stereotype.Service;
 
 @Service
 public interface EstadoRevisorService {
-    ReporteTResponse agregarEstadoRevisor(AddEstadoRevisor reporteT);
+    EstadoRevisorResponse agregarEstadoRevisor(AddEstadoRevisorRequest reporte);
 }

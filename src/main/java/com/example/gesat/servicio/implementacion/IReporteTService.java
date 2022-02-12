@@ -4,7 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.gesat.controlador.respuesta.ReporteTResponse;
+import com.example.gesat.controlador.respuesta.ReporteTRespuesta.EstadoRevisorResponse;
+import com.example.gesat.controlador.respuesta.ReporteTRespuesta.ReporteTResponse;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
 import com.example.gesat.repositorio.IReporteTRepository;
@@ -20,11 +21,11 @@ public class IReporteTService implements ReporteTService{
     private IReporteTRepository repository;
 
     @Override
-    public List<ReporteTResponse> findAll() {
+    public List<EstadoRevisorResponse> findAll() {
         return repository
                 .findAll()
                 .parallelStream()
-                .map(ReporteTResponse::new)
+                .map(EstadoRevisorResponse::new)
                 .collect(Collectors.toList());
     }
 
@@ -42,8 +43,8 @@ public class IReporteTService implements ReporteTService{
     }
 
     @Override
-    public ReporteTResponse findByID(Integer id) {
-        return new ReporteTResponse(repository.getById(id));
+    public EstadoRevisorResponse findByID(Integer id) {
+        return new EstadoRevisorResponse(repository.getById(id));
     }
 
     @Override
