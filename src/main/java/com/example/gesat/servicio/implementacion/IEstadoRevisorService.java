@@ -15,7 +15,6 @@ public class IEstadoRevisorService implements EstadoRevisorService {
 
     @Override
     public EstadoRevisorResponse agregarEstadoRevisor(AddEstadoRevisorRequest reporte) {
-        return new EstadoRevisorResponse(reporte.addEstadoRevisor(repository.getById(reporte.getId())));
-    }
+        return new EstadoRevisorResponse(repository.save(reporte.addEstadoRevisor(repository.getById(reporte.getId()))));    }
 
 }
