@@ -1,6 +1,5 @@
 package com.example.gesat.repositorio.entidad;
-import java.util.Date;
-
+import java.time.LocalDate;
 import javax.persistence.*;
 @Table(name = "reporte_Notificacion")
 @Entity
@@ -17,7 +16,7 @@ public class ReporteN extends Entidad{
     @Column
     private Integer local;
     @Column
-    private Date fecha;
+    private LocalDate fecha;
     @Column
     private String hora;
     @Column
@@ -66,22 +65,20 @@ public class ReporteN extends Entidad{
         this.local = local;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
     public String getHora() {
         return hora;
     }
-
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setHora(Integer hh, Integer mm){
+       this.hora= hh +":"+ mm;
     }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -89,6 +86,7 @@ public class ReporteN extends Entidad{
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+ 
 
     
 }

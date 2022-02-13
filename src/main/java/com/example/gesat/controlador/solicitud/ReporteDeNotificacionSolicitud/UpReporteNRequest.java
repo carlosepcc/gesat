@@ -1,7 +1,6 @@
 package com.example.gesat.controlador.solicitud.ReporteDeNotificacionSolicitud;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 import com.example.gesat.repositorio.entidad.ReporteN;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -12,8 +11,9 @@ public class UpReporteNRequest {
     private String fase;
     private String disciplina;
     private Integer local;
-    private Date fecha;
-    private String hora;
+    private LocalDate fecha;
+    private Integer h;
+    private Integer m;
     private String descripcion;
 
     public UpReporteNRequest(){
@@ -43,12 +43,16 @@ public class UpReporteNRequest {
         return local;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
+    
+    public Integer getH() {
+        return h;
+    }
 
-    public String getHora() {
-        return hora;
+    public Integer getM() {
+        return m;
     }
 
     public String getDescripcion() {
@@ -64,7 +68,7 @@ public class UpReporteNRequest {
        reporte.setDisciplina(this.disciplina);
        reporte.setDescripcion(this.descripcion);
        reporte.setFecha(this.fecha);
-       reporte.setHora(this.hora);
+       reporte.setHora(this.h, this.m);
        reporte.setLocal(this.local);
         return reporte;
     }

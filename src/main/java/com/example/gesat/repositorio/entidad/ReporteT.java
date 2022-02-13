@@ -1,6 +1,5 @@
 package com.example.gesat.repositorio.entidad;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.*;
 @Table(name = "reporte_Tecnico")
@@ -15,9 +14,9 @@ public class ReporteT extends Entidad{
     @Column
     private String tipo;
     @Column
-    private Date fechaI;
+    private LocalDate fechaI;
     @Column
-    private Date fechaC;
+    private LocalDate fechaC;
     @Column
     private Integer evaluacion;
     @Column
@@ -55,19 +54,19 @@ public class ReporteT extends Entidad{
     }
     
 
-    public Date getFechaI() {
+    public LocalDate getFechaI() {
         return fechaI;
     }
 
-    public void setFechaI(Date fechaI) {
+    public void setFechaI(LocalDate fechaI) {
         this.fechaI = fechaI;
     }
 
-    public Date getFechaC() {
+    public LocalDate getFechaC() {
         return fechaC;
     }
 
-    public void setFechaC(Date fechaC) {
+    public void setFechaC(LocalDate fechaC) {
         this.fechaC = fechaC;
     }
 

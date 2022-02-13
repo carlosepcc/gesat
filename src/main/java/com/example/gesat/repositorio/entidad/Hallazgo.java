@@ -1,5 +1,5 @@
 package com.example.gesat.repositorio.entidad;
-import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.*;
 @Table(name = "hallasgos")
 @Entity
@@ -13,7 +13,7 @@ public class Hallazgo extends Entidad{
     @Column
     private Integer tipo;
     @Column
-    private Date fecha;
+    private LocalDate fecha;
     @Column
     private String impacto;
   
@@ -52,11 +52,11 @@ public class Hallazgo extends Entidad{
         this.tipo = tipo;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 

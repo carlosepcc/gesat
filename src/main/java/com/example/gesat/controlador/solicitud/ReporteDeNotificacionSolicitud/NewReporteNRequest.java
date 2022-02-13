@@ -1,5 +1,6 @@
 package com.example.gesat.controlador.solicitud.ReporteDeNotificacionSolicitud;
-import java.util.Date;
+
+import java.time.LocalDate;
 
 import com.example.gesat.repositorio.entidad.ReporteN;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,11 +12,11 @@ public class NewReporteNRequest {
     private String fase;
     private String disciplina;
     private Integer local;
-    private Date fecha;
-    private String hora;
+    private Integer h;
+    private Integer m;
     private String descripcion;
 
-    public NewReporteNRequest(){
+    public NewReporteNRequest() {
     }
 
     public String getProducto() {
@@ -38,28 +39,29 @@ public class NewReporteNRequest {
         return local;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public Integer getH() {
+        return h;
     }
 
-    public String getHora() {
-        return hora;
+    public Integer getM() {
+        return m;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
+
     @JsonIgnore
-    public ReporteN toReporteN(){
-       ReporteN reporte=new ReporteN();
-       reporte.setProducto(this.producto);
-       reporte.setNombre(this.nombre);
-       reporte.setFase(this.fase);
-       reporte.setDisciplina(this.disciplina);
-       reporte.setDescripcion(this.descripcion);
-       reporte.setFecha(this.fecha);
-       reporte.setHora(this.hora);
-       reporte.setLocal(this.local);
+    public ReporteN toReporteN() {
+        ReporteN reporte = new ReporteN();
+        reporte.setProducto(this.producto);
+        reporte.setNombre(this.nombre);
+        reporte.setFase(this.fase);
+        reporte.setDisciplina(this.disciplina);
+        reporte.setDescripcion(this.descripcion);
+        reporte.setFecha(LocalDate.now());
+        reporte.setHora(this.h, this.m);
+        reporte.setLocal(this.local);
         return reporte;
     }
 

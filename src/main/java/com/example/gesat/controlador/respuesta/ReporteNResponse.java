@@ -1,5 +1,5 @@
 package com.example.gesat.controlador.respuesta;
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.example.gesat.repositorio.entidad.ReporteN;
 
@@ -10,7 +10,7 @@ public class ReporteNResponse {
     private String fase;
     private String disciplina;
     private Integer local;
-    private Date fecha;
+    private LocalDate fecha;
     private String hora;
     private String descripcion;
 
@@ -50,7 +50,7 @@ public class ReporteNResponse {
         return local;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 

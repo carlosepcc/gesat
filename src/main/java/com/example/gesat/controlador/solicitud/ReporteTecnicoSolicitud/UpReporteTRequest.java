@@ -1,8 +1,6 @@
 package com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.Date;
-
+import java.time.LocalDate;
 import com.example.gesat.repositorio.entidad.ReporteT;
 
 public class UpReporteTRequest {
@@ -10,8 +8,8 @@ public class UpReporteTRequest {
     private String nombre;
     private String descripcion;
     private String tipo;
-    private Date fechaI;
-    private Date fechaC;
+    private LocalDate fechaI;
+    private LocalDate fechaC;
     private Integer evaluacion;
     private Integer attribute;
     
@@ -31,10 +29,10 @@ public class UpReporteTRequest {
     public String getTipo() {
         return tipo;
     }
-    public Date getFechaI() {
+    public LocalDate getFechaI() {
         return fechaI;
     }
-    public Date getFechaC() {
+    public LocalDate getFechaC() {
         return fechaC;
     }
     public Integer getEvaluacion() {

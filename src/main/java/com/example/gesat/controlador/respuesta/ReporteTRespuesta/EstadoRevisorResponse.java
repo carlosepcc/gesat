@@ -1,6 +1,5 @@
 package com.example.gesat.controlador.respuesta.ReporteTRespuesta;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.example.gesat.repositorio.entidad.ReporteT;
 import com.example.gesat.repositorio.entidad.User;
@@ -14,8 +13,8 @@ public class EstadoRevisorResponse {
     private String tipo;
     private Integer evaluacion;
     private Integer attribute;
-    private Date fechaI;
-    private Date fechaC;
+    private LocalDate fechaI;
+    private LocalDate fechaC;
     
     
     
@@ -49,10 +48,10 @@ public class EstadoRevisorResponse {
         return tipo;
     }
 
-    public Date getFechaI() {
+    public LocalDate getFechaI() {
         return fechaI;
     }
-    public Date getFechaC() {
+    public LocalDate getFechaC() {
         return fechaC;
     }
     

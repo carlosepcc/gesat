@@ -1,6 +1,5 @@
 package com.example.gesat.controlador.solicitud.HallazgoSolicitud;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 import com.example.gesat.repositorio.entidad.Hallazgo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +10,7 @@ public class UpHallazgoRequest {
     private String ubicacion;
     private String descripcion;
     private Integer tipo;
-    private Date fecha;
+    private LocalDate fecha;
     private String impacto;
    
     public UpHallazgoRequest() {
@@ -31,7 +30,7 @@ public class UpHallazgoRequest {
     public Integer getTipo() {
         return tipo;
     }
-   public Date getFecha() {
+   public LocalDate getFecha() {
         return fecha;
     }
      public String getImpacto() {
