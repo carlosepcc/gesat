@@ -1,5 +1,6 @@
 package com.example.gesat.servicio.implementacion;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,7 +30,7 @@ public class IArtefactService implements ArtefactService {
     }
 
     @Override
-    public ArtefactoResponse save(NewArtefactoRequest artefacto) {
+    public ArtefactoResponse save(NewArtefactoRequest artefacto) throws IOException {
         return new ArtefactoResponse(repository.save(artefacto.toArtefacto()));
     }
 
@@ -47,7 +48,7 @@ public class IArtefactService implements ArtefactService {
         }
 
         @Override
-        public ArtefactoResponse edit(UpArtefactoRequest artefacto) {
+        public ArtefactoResponse edit(UpArtefactoRequest artefacto) throws IOException {
             return new ArtefactoResponse(repository.save(artefacto.upArtefacto()));
         }
     

@@ -1,4 +1,5 @@
 package com.example.gesat.controlador;
+import java.io.IOException;
 import java.util.List;
 
 import com.example.gesat.controlador.respuesta.ArtefactoResponse;
@@ -32,11 +33,11 @@ public class ArtefactController {
     }
 
     @PostMapping
-    public ResponseEntity<ArtefactoResponse> save(@RequestBody NewArtefactoRequest artefacto) {
+    public ResponseEntity<ArtefactoResponse> save(@RequestBody NewArtefactoRequest artefacto) throws IOException {
         return ResponseEntity.ok(service.save(artefacto));
     }
     @PutMapping
-    public ResponseEntity<ArtefactoResponse> edit(@RequestBody UpArtefactoRequest artefacto) {
+    public ResponseEntity<ArtefactoResponse> edit(@RequestBody UpArtefactoRequest artefacto) throws IOException {
         return ResponseEntity.ok(service.edit(artefacto));
     }
 

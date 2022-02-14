@@ -1,8 +1,11 @@
 package com.example.gesat.repositorio.entidad;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 
 import lombok.AllArgsConstructor;
+
 @Entity
 @AllArgsConstructor
 public class Artefacto extends Entidad {
@@ -15,9 +18,12 @@ public class Artefacto extends Entidad {
 	private Integer disciplina;
 	@Column
 	private String descripcion;
-	
+	@Lob
+	@Column
+	private byte[] file;
+
 	public Artefacto() {
-		
+
 	}
 
 	public String getNombre() {
@@ -51,5 +57,13 @@ public class Artefacto extends Entidad {
 	public void setDisciplina(Integer disciplina) {
 		this.disciplina = disciplina;
 	}
-	
+
+	public byte[] getFile() {
+		return file;
+	}
+
+	public void setFile(byte[] file) {
+		this.file = file;
+	}
+
 }

@@ -1,5 +1,6 @@
 package com.example.gesat.servicio;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.example.gesat.controlador.respuesta.ArtefactoResponse;
@@ -11,9 +12,9 @@ import org.springframework.stereotype.Service;
 public interface ArtefactService  {
     List<ArtefactoResponse> findAll();
     ArtefactoResponse findByID(Integer id);
-    ArtefactoResponse save(NewArtefactoRequest artefacto);
+    ArtefactoResponse save(NewArtefactoRequest artefacto) throws IOException;
     void delete(Integer[] ids);
-    ArtefactoResponse edit(UpArtefactoRequest artefacto);
+    ArtefactoResponse edit(UpArtefactoRequest artefacto) throws IOException;
 
    
 }
