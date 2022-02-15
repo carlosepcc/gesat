@@ -4,6 +4,9 @@ import java.util.List;
 import com.example.gesat.repositorio.entidad.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 public class UpUsuarioRequest {
     private Integer id;
     private String username;
@@ -11,6 +14,8 @@ public class UpUsuarioRequest {
     private String pass;
     private List<Users.Rol> roles;
     private String nombre;
+
+    PasswordEncoder encoder = new BCryptPasswordEncoder();
 
     public UpUsuarioRequest() {
     }
@@ -49,7 +54,7 @@ public class UpUsuarioRequest {
             usuario.addRol(rol);
         });
         usuario.setApellidos(this.apellidos);
-        usuario.setPass(this.pass);
+        usuario.setPass(encoder.encode(this.pass));
         usuario.setNombre(this.nombre);
         return usuario;
     }
