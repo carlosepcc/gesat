@@ -1,7 +1,7 @@
 package com.example.gesat.controlador.solicitud.MinutaSolicitud;
 
 import com.example.gesat.repositorio.entidad.Minuta;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UpMinutaRequest {
@@ -9,8 +9,8 @@ public class UpMinutaRequest {
     private Integer id;
     private String nombreP;
     private String acuerdos;
-    private User encargado;
-    private User revisor;
+    private Users encargado;
+    private Users revisor;
     
     public UpMinutaRequest() {
     }
@@ -24,10 +24,10 @@ public class UpMinutaRequest {
     public String getAcuerdos() {
         return acuerdos;
     } 
-    public User getEncargado() {
+    public Users getEncargado() {
         return encargado;
     }
-    public User getRevisor() {
+    public Users getRevisor() {
         return revisor;
     }    
       

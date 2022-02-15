@@ -1,14 +1,14 @@
 package com.example.gesat.controlador.respuesta;
 
 import com.example.gesat.repositorio.entidad.Minuta;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 
 public class MinutaResponse {
     private Integer id;
     private String nombreP;
     private String acuerdos;
-    private User encargado;
-    private User revisor;
+    private Users encargado;
+    private Users revisor;
     
     public MinutaResponse(Minuta minuta) {
         this.id = minuta.getId();
@@ -29,11 +29,11 @@ public class MinutaResponse {
         return acuerdos;
     }
 
-    public User getEncargado() {
+    public Users getEncargado() {
         return encargado;
     }
 
-    public User getRevisor() {
+    public Users getRevisor() {
         return revisor;
     }
 }

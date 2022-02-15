@@ -1,10 +1,8 @@
 package com.example.gesat.controlador.solicitud.ArtefactoSolicitud;
 
 import java.io.IOException;
-
 import com.example.gesat.repositorio.entidad.Artefacto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import org.springframework.web.multipart.MultipartFile;
 public class NewArtefactoRequest {
 	private String nombre;

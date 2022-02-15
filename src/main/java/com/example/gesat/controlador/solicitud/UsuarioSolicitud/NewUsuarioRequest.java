@@ -1,14 +1,14 @@
 package com.example.gesat.controlador.solicitud.UsuarioSolicitud;
 
 import java.util.List;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class NewUsuarioRequest {
     private String username;
     private String apellidos;
     private String pass;
-    private List<User.Rol> roles;
+    private List<Users.Rol> roles;
     private String nombre;
 
     public NewUsuarioRequest() {
@@ -30,15 +30,15 @@ public class NewUsuarioRequest {
         return nombre;
     }
 
-    public List<User.Rol> getRoles() {
+    public List<Users.Rol> getRoles() {
         return roles;
     }
 
     @JsonIgnore
-    public User toUsuario() {
-        User usuario = new User();
+    public Users toUsuario() {
+        Users usuario = new Users();
         usuario.setUsername(this.username);
-        usuario.addRol(User.Rol.Usuario);
+        usuario.addRol(Users.Rol.Usuario);
         roles.forEach(rol -> {
             usuario.addRol(rol);
         });

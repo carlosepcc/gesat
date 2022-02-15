@@ -17,7 +17,7 @@ public class DictamenT extends Entidad {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="nombre_ep")
-    private User nombreEp;
+    private Users nombreEp;
     
     
     public DictamenT() {
@@ -31,11 +31,11 @@ public class DictamenT extends Entidad {
         this.nombreP = nombreP;
     }
 
-    public User getNombreEp() {
+    public Users getNombreEp() {
         return nombreEp;
     }
 
-    public void setNombreEp(User nombreEp) {
+    public void setNombreEp(Users nombreEp) {
         this.nombreEp = nombreEp;
     }
 

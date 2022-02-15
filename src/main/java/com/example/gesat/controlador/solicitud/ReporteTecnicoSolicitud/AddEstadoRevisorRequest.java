@@ -1,12 +1,12 @@
 package com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud;
 import com.example.gesat.repositorio.entidad.ReporteT;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class AddEstadoRevisorRequest {
     private Integer id;
     private String estado;
-    private User revisor;
+    private Users revisor;
     
     public AddEstadoRevisorRequest() {
     }
@@ -16,7 +16,7 @@ public class AddEstadoRevisorRequest {
     public String getEstado() {
         return estado;
     }
-    public User getRevisor() {
+    public Users getRevisor() {
         return revisor;
     }
     @JsonIgnore

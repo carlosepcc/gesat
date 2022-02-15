@@ -1,13 +1,13 @@
 package com.example.gesat.controlador.respuesta;
 
 import com.example.gesat.repositorio.entidad.DictamenT;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 
 public class DictamenTResponse {
     
     private Integer id;
     private String nombreP;
-    private User nombreEp;
+    private Users nombreEp;
     private String descripcion;
     private Integer cantNoConf;
     private Integer cantPortMej;
@@ -26,7 +26,7 @@ public class DictamenTResponse {
     public String getNombreP() {
         return nombreP;
     }
-    public User getNombreEp() {
+    public Users getNombreEp() {
         return nombreEp;
     }
     public String getDescripcion() {

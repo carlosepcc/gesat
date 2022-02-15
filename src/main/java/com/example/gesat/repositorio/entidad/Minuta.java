@@ -10,11 +10,11 @@ public class Minuta extends Entidad {
     
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "encargado_id")
-    private User encargado;
+    private Users encargado;
    
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "revisor_id")
-    private User revisor;
+    private Users revisor;
 
     public Minuta() {
     }
@@ -30,16 +30,16 @@ public class Minuta extends Entidad {
     public void setAcuerdos(String acuerdos) {
         this.acuerdos = acuerdos;
     }
-    public User getEncargado() {
+    public Users getEncargado() {
         return encargado;
     }
-    public void setEncargado(User encargado) {
+    public void setEncargado(Users encargado) {
         this.encargado = encargado;
     }
-    public User getRevisor() {
+    public Users getRevisor() {
         return revisor;
     }
-    public void setRevisor(User revisor) {
+    public void setRevisor(Users revisor) {
         this.revisor = revisor;
     }
     

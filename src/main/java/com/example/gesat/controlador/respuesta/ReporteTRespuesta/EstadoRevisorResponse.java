@@ -2,14 +2,14 @@ package com.example.gesat.controlador.respuesta.ReporteTRespuesta;
 import java.time.LocalDate;
 
 import com.example.gesat.repositorio.entidad.ReporteT;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 
 public class EstadoRevisorResponse {
     private Integer id;
     private String nombre;
     private String descripcion;
     private String estado;
-    private User revisor;
+    private Users revisor;
     private String tipo;
     private Integer evaluacion;
     private Integer attribute;
@@ -55,7 +55,7 @@ public class EstadoRevisorResponse {
         return fechaC;
     }
     
-    public User getRevisor() {
+    public Users getRevisor() {
         return revisor;
     }
 

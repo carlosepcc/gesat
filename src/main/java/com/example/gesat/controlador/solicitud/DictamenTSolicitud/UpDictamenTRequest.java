@@ -1,13 +1,13 @@
 package com.example.gesat.controlador.solicitud.DictamenTSolicitud;
 
 import com.example.gesat.repositorio.entidad.DictamenT;
-import com.example.gesat.repositorio.entidad.User;
+import com.example.gesat.repositorio.entidad.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UpDictamenTRequest {
     private Integer id;
     private String nombreP;
-    private User nombreEp;
+    private Users nombreEp;
     private String descripcion;
     private Integer cantNoConf;
     private Integer cantPortMej;
@@ -18,7 +18,7 @@ public class UpDictamenTRequest {
     public String getNombreP() {
         return nombreP;
     }
-    public User getNombreEp() {
+    public Users getNombreEp() {
         return nombreEp;
     }
     public String getDescripcion() {

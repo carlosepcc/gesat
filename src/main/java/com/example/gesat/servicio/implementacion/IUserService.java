@@ -4,9 +4,11 @@ import com.example.gesat.controlador.respuesta.UsuarioResponse;
 import com.example.gesat.controlador.solicitud.UsuarioSolicitud.NewUsuarioRequest;
 import com.example.gesat.controlador.solicitud.UsuarioSolicitud.UpUsuarioRequest;
 import com.example.gesat.repositorio.IUserRepository;
+import com.example.gesat.repositorio.entidad.Users;
 import com.example.gesat.servicio.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,6 +19,8 @@ import java.util.stream.Collectors;
 @Service
 public class IUserService implements UserService {
 
+    @Autowired
+    public PasswordEncoder passwordEncoder;
     @Autowired
     @Qualifier("IUserRepository")
     private IUserRepository repository;
@@ -41,10 +45,11 @@ public class IUserService implements UserService {
             repository.deleteById(id);
         });
     }
+
     @Override
     public UsuarioResponse findByID(Integer id) {
         return new UsuarioResponse(repository.getById(id));
-        
+
     }
 
     @Override
@@ -63,5 +68,20 @@ public class IUserService implements UserService {
                     });
                 });
         return u;
-}
+    }
+
+    @Override
+    public Users getByUsuario(String username) {
+        if (username.equals("admin")) {
+            Users usuario = new Users();
+            usuario.setNombre("Admin");
+            usuario.setUsername(username);
+            usuario.setPass(passwordEncoder.encode("1234"));
+            usuario.getRoles().add(Users.Rol.Usuario);
+            usuario.getRoles().add(Users.Rol.Administrador);
+            return usuario;
+        }
+        return repository.findByUsername(username);
+    }
+
 }

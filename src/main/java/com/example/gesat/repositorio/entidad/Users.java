@@ -5,7 +5,7 @@ import java.util.List;
 
 @Table(name= "users")
 @Entity
-public class User extends Entidad {
+public class Users extends Entidad {
     public enum Rol {Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor, Usuario}
 
     @Column
@@ -15,7 +15,7 @@ public class User extends Entidad {
     @Column
     private String username;
     @Column
-    private String pass;
+    private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
@@ -23,7 +23,7 @@ public class User extends Entidad {
     @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "role_id"))
     private List<Rol> roles = new ArrayList<>();
 
-    public User() {
+    public Users() {
     }
 
     public String getApellidos() {
@@ -43,11 +43,11 @@ public class User extends Entidad {
     }
 
     public String getPass() {
-        return pass;
+        return password;
     }
 
     public void setPass(String pass) {
-        this.pass = pass;
+        this.password = pass;
     }
 
     public void setRoles(List<Rol> roles) {
