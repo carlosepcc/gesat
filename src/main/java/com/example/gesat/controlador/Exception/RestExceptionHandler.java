@@ -1,4 +1,4 @@
-package com.example.gesat.controlador;
+package com.example.gesat.controlador.Exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

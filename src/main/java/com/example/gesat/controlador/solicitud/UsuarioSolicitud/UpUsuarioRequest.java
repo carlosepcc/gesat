@@ -49,7 +49,6 @@ public class UpUsuarioRequest {
         Users usuario = new Users();
         usuario.setId(id);
         usuario.setUsername(this.username);
-        usuario.addRol(Users.Rol.Usuario);
         roles.forEach(rol -> {
             usuario.addRol(rol);
         });

@@ -6,7 +6,7 @@ import java.util.List;
 @Table(name= "users")
 @Entity
 public class Users extends Entidad {
-    public enum Rol {Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor, Usuario}
+    public enum Rol {Administrador, Coordinador_de_calidad, Asesor_de_calidad, Encargado_de_proyecto, Revisor}
 
     @Column
     private String nombre;

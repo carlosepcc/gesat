@@ -43,7 +43,6 @@ public class NewUsuarioRequest {
     public Users toUsuario() {
         Users usuario = new Users();
         usuario.setUsername(this.username);
-        usuario.addRol(Users.Rol.Usuario);
         roles.forEach(rol -> {
             usuario.addRol(rol);
         });

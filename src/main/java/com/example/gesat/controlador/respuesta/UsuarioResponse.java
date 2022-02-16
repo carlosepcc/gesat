@@ -18,7 +18,6 @@ public class UsuarioResponse {
     public UsuarioResponse(Users usuario) {
         this.id = usuario.getId();
         this.username = usuario.getUsername();
-        usuario.getRoles().remove(Users.Rol.Usuario);
         this.roles = usuario.getRoles().parallelStream().map(Enum::name).collect(Collectors.toList());
         this.apellidos=usuario.getApellidos();
         this.pass=usuario.getPass();
