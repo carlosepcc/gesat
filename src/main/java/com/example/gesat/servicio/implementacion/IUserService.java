@@ -78,6 +78,10 @@ public class IUserService implements UserService {
             usuario.setUsername(username);
             usuario.setPass(passwordEncoder.encode("1234"));
             usuario.getRoles().add(Users.Rol.Administrador);
+            usuario.getRoles().add(Users.Rol.Asesor_de_calidad);
+            usuario.getRoles().add(Users.Rol.Encargado_de_proyecto);
+            usuario.getRoles().add(Users.Rol.Coordinador_de_calidad);
+            usuario.getRoles().add(Users.Rol.Revisor);
             return usuario;
         }
         return repository.findByUsername(username);
