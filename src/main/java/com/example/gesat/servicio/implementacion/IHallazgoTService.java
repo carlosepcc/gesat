@@ -1,4 +1,6 @@
 package com.example.gesat.servicio.implementacion;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -46,6 +48,17 @@ public class IHallazgoTService implements HallazgoTService {
     @Override
     public HallazgoResponse edit(UpHallazgoRequest artefacto) {
          return new HallazgoResponse(repository.save(artefacto.upHallazgo()));
+    }
+
+    @Override
+    public List<HallazgoResponse> findByFecha(LocalDate fecha) {
+      List<HallazgoResponse> l= new ArrayList<HallazgoResponse>();
+         this.findAll().parallelStream().forEach(h -> {
+             if(fecha.isEqual(h.getFecha()))
+                 l.add(h);
+         });
+        return l;
+        //return this.findAll().stream().filter(h ->fecha.isEqual(h.getFecha())).collect(Collectors.toList());
     }
     
 }

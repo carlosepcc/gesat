@@ -7,7 +7,6 @@ public class ReporteTResponse {
     private String descripcion;
     private String tipo;
     private Integer evaluacion;
-    private Integer attribute;
     private LocalDate fechaI;
     private LocalDate fechaC;
     
@@ -20,7 +19,6 @@ public class ReporteTResponse {
         this.tipo=reporte.getTipo();
         this.fechaI=reporte.getFechaI();
         this.fechaC=reporte.getFechaC();
-        this.attribute=reporte.getAttribute();
         this.evaluacion=reporte.getEvaluacion();
         
     }
@@ -46,8 +44,5 @@ public class ReporteTResponse {
     }
     public Integer getEvaluacion() {
         return evaluacion;
-    }
-    public Integer getAttribute() {
-        return attribute;
     }
 }

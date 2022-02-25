@@ -1,4 +1,4 @@
-package com.example.gesat.servicio.implementacion;
+package com.example.gesat.Seguridad;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

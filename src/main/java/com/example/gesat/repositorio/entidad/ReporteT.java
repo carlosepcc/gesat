@@ -19,9 +19,7 @@ public class ReporteT extends Entidad{
     private LocalDate fechaC;
     @Column
     private Integer evaluacion;
-    @Column
-    private Integer attribute;
-    
+  
     public ReporteT() {
     }
 
@@ -81,12 +79,7 @@ public class ReporteT extends Entidad{
     public void setEvaluacion(Integer evaluacion) {
         this.evaluacion = evaluacion;
     }
-    public Integer getAttribute() {
-        return attribute;
-    }
-    public void setAttribute(Integer attribute) {
-        this.attribute = attribute;
-    }
+    
     public Users getRevisor() {
         return revisor;
     }

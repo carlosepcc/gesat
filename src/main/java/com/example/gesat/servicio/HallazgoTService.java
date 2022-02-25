@@ -1,8 +1,10 @@
 package com.example.gesat.servicio;
+import java.time.LocalDate;
 import java.util.List;
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
+
 
 import org.springframework.stereotype.Service;
 
@@ -13,5 +15,5 @@ public interface HallazgoTService  {
     HallazgoResponse save(NewHallazgoRequest artefacto);
     void delete(Integer[] ids);
     HallazgoResponse edit(UpHallazgoRequest artefacto);
-
+    List<HallazgoResponse> findByFecha(LocalDate fecha);
 }

@@ -1,6 +1,6 @@
-package com.example.gesat.configuracion;
-import com.example.gesat.Filtro.JwtRequestF;
-import com.example.gesat.servicio.implementacion.UserDetailsSI;
+package com.example.gesat.Seguridad.configuracion;
+import com.example.gesat.Seguridad.UserDetailsSI;
+import com.example.gesat.Seguridad.Filtro.JwtRequestF;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

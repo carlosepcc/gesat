@@ -1,4 +1,6 @@
 package com.example.gesat.controlador;
+
+import java.time.LocalDate;
 import java.util.List;
 import com.example.gesat.controlador.respuesta.HallazgoResponse;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
@@ -17,6 +19,7 @@ public class HallazgoController {
     @Autowired
     @Qualifier("IHallazgoTService")
     private HallazgoTService service;
+  
      
     @GetMapping()
     public ResponseEntity<List<HallazgoResponse>> findAll() {
@@ -43,4 +46,8 @@ public class HallazgoController {
         return ResponseEntity.ok(ids);
     }
     
+    @GetMapping(path="/findByFecha")
+    public ResponseEntity<List<HallazgoResponse>> findByFecha(LocalDate fecha)throws Exception {
+        return ResponseEntity.ok(service.findByFecha(fecha));
+    }
 }

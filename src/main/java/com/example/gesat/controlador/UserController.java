@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/usuario")
-@CrossOrigin("*")
+@RequestMapping("/usuario" )
+@CrossOrigin("*" )
 public class UserController {
 
     @Autowired
@@ -35,8 +35,8 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario) {
-        return ResponseEntity.ok(service.save(usuario));
+    public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario ) {
+        return ResponseEntity.ok(service.save(usuario) );
     }
 
     @PutMapping

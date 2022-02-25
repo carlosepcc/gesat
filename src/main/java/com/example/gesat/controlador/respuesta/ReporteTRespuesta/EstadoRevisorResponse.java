@@ -12,7 +12,6 @@ public class EstadoRevisorResponse {
     private Users revisor;
     private String tipo;
     private Integer evaluacion;
-    private Integer attribute;
     private LocalDate fechaI;
     private LocalDate fechaC;
     
@@ -27,7 +26,6 @@ public class EstadoRevisorResponse {
         this.tipo=reporte.getTipo();
         this.fechaI=reporte.getFechaI();
         this.fechaC=reporte.getFechaC();
-        this.attribute=reporte.getAttribute();
         this.evaluacion=reporte.getEvaluacion();
         
     }
@@ -61,8 +59,5 @@ public class EstadoRevisorResponse {
 
     public Integer getEvaluacion() {
         return evaluacion;
-    }
-    public Integer getAttribute() {
-        return attribute;
     }
 }

@@ -12,6 +12,7 @@ public class UsuarioResponse {
     private String pass;
     private List<String> roles;
     private String nombre;
+    
     public UsuarioResponse() {
     }
 

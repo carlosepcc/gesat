@@ -1,8 +1,4 @@
-package com.example.gesat.controlador;
-import com.example.gesat.controlador.solicitud.LoginSo;
-import com.example.gesat.servicio.implementacion.JwtSI;
-import com.example.gesat.servicio.implementacion.UserDetailsSI;
-
+package com.example.gesat.Seguridad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

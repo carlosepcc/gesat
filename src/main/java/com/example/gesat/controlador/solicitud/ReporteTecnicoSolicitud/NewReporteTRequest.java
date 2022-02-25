@@ -8,7 +8,6 @@ public class NewReporteTRequest {
     private String descripcion;
     private String tipo;
     private Integer evaluacion;
-    private Integer attribute;
     private LocalDate fechaI;
     private LocalDate fechaC;
     
@@ -38,9 +37,7 @@ public class NewReporteTRequest {
     public Integer getEvaluacion() {
         return evaluacion;
     }
-    public Integer getAttribute() {
-        return attribute;
-    }
+  
     @JsonIgnore
     public ReporteT toReporteT(){
         ReporteT reporte= new ReporteT();
@@ -48,7 +45,7 @@ public class NewReporteTRequest {
         reporte.setDescripcion(this.descripcion);
         reporte.setTipo(this.tipo);
         reporte.setEvaluacion(this.evaluacion);
-        reporte.setAttribute(this.attribute);
+    
         reporte.setFechaI(this.fechaI);
         reporte.setFechaC(this.fechaC);
         return reporte;

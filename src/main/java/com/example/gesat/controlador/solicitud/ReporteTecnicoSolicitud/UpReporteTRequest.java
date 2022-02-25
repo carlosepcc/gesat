@@ -11,7 +11,6 @@ public class UpReporteTRequest {
     private LocalDate fechaI;
     private LocalDate fechaC;
     private Integer evaluacion;
-    private Integer attribute;
     
     
     public UpReporteTRequest() {
@@ -38,9 +37,6 @@ public class UpReporteTRequest {
     public Integer getEvaluacion() {
         return evaluacion;
     }
-    public Integer getAttribute() {
-        return attribute;
-    }
     @JsonIgnore
     public ReporteT upReporteT(){
         ReporteT reporte= new ReporteT();
@@ -51,7 +47,6 @@ public class UpReporteTRequest {
         reporte.setFechaI(this.fechaI);
         reporte.setFechaC(this.fechaC);
         reporte.setEvaluacion(this.evaluacion);
-        reporte.setAttribute(this.attribute);
         return reporte;
     }
     

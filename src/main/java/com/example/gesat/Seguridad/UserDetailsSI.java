@@ -1,4 +1,4 @@
-package com.example.gesat.servicio.implementacion;
+package com.example.gesat.Seguridad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
