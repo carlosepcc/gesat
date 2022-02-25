@@ -35,7 +35,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario ) {
+    public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario ) throws Exception {
         return ResponseEntity.ok(service.save(usuario) );
     }
 

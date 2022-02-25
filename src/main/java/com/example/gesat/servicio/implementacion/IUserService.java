@@ -35,9 +35,11 @@ public class IUserService implements UserService {
     }
 
     @Override
-    public UsuarioResponse save(NewUsuarioRequest usuario) {
-        return new UsuarioResponse(repository.save(usuario.toUsuario()));
-    }
+    public UsuarioResponse save(NewUsuarioRequest usuario) throws Exception {
+      if(getByUsuario(usuario.toUsuario().getUsername())==null) 
+            return new UsuarioResponse(repository.save(usuario.toUsuario()));
+        else throw new Exception("El nombre de usuario ya está en uso");
+            }
 
     @Override
     public void delete(Integer[] ids) {
