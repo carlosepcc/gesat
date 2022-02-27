@@ -13,8 +13,8 @@ public interface MinutaService {
 
     List<MinutaResponse> findAll();
     MinutaResponse findByID(Integer id);
-    MinutaResponse save(NewMinutaRequest artefacto);
+    MinutaResponse save(NewMinutaRequest minuta);
     void delete(Integer[] ids);
-    MinutaResponse edit(UpMinutaRequest artefacto);
+    MinutaResponse edit(UpMinutaRequest minuta);
 
 }

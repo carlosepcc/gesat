@@ -24,7 +24,18 @@ public class NewMinutaRequest {
     public Users getRevisor() {
         return revisor;
     }    
-      
+    public void setNombreP(String nombreP) {
+        this.nombreP = nombreP;
+    }
+    public void setAcuerdos(String acuerdos) {
+        this.acuerdos = acuerdos;
+    }
+    public void setEncargado(Users encargado) {
+        this.encargado = encargado;
+    }
+    public void setRevisor(Users revisor) {
+        this.revisor = revisor;
+    }
     @JsonIgnore
 	public Minuta toMinuta(){
         Minuta minuta= new Minuta();

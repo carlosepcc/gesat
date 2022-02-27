@@ -30,7 +30,26 @@ public class UpMinutaRequest {
     public Users getRevisor() {
         return revisor;
     }    
-      
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNombreP(String nombreP) {
+        this.nombreP = nombreP;
+    }
+
+    public void setAcuerdos(String acuerdos) {
+        this.acuerdos = acuerdos;
+    }
+
+    public void setEncargado(Users encargado) {
+        this.encargado = encargado;
+    }
+
+    public void setRevisor(Users revisor) {
+        this.revisor = revisor;
+    }
+
     @JsonIgnore
 	public Minuta upMinuta(){
         Minuta minuta= new Minuta();

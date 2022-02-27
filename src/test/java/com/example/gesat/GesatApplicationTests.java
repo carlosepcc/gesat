@@ -8,6 +8,7 @@ import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.NewArtefactoRe
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
+import com.example.gesat.controlador.solicitud.MinutaSolicitud.NewMinutaRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisorRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
@@ -17,6 +18,7 @@ import com.example.gesat.repositorio.entidad.Users;
 import com.example.gesat.servicio.ArtefactService;
 import com.example.gesat.servicio.EstadoRevisorService;
 import com.example.gesat.servicio.HallazgoTService;
+import com.example.gesat.servicio.MinutaService;
 import com.example.gesat.servicio.ReporteTService;
 import com.example.gesat.servicio.UserService;
 import org.junit.jupiter.api.Test;
@@ -39,7 +41,7 @@ class GesatApplicationTests {
         List<Users.Rol> l = new ArrayList<Users.Rol>();
         l.add(Users.Rol.Administrador);
         us.setRoles(l);
-        us.setUsername("test1");
+        us.setUsername("test5");
         us.setPass(encoder.encode("1234"));
         service.save(us);
     }
@@ -53,14 +55,14 @@ class GesatApplicationTests {
         List<Users.Rol> l = new ArrayList<Users.Rol>();
         l.add(Users.Rol.Administrador);
         us.setRoles(l);
-        us.setUsername("test1");
+        us.setUsername("test5");
         us.setPass(encoder.encode("1234"));
         service.edit(us);
     }
 
     @Test
     public void eliminarUsuario() {
-        service.delete(new Integer[] { 1, 2 });
+        service.delete(new Integer[] {4});
     }
 
     @Autowired
@@ -69,7 +71,7 @@ class GesatApplicationTests {
     @Test
     public void crearReporteTest() throws Exception {
         NewReporteTRequest reporte = new NewReporteTRequest();
-        reporte.setNombre("repTest1");
+        reporte.setNombre("repTest3");
         reporte.setDescripcion("descripcion");
         reporte.setFechaI(LocalDate.now());
         reporte.setFechaC(LocalDate.now());
@@ -88,17 +90,17 @@ class GesatApplicationTests {
 
     }
 
-    @Autowired
-    private EstadoRevisorService estadoRevisorService;
+    // @Autowired
+    // private EstadoRevisorService estadoRevisorService;
 
-    @Test
-    public void AgregarEstadoRevisorTest() {
-        AddEstadoRevisorRequest reporte = new AddEstadoRevisorRequest();
-        reporte.setId(2);
-        reporte.setEstado("Revisado");
-        reporte.setRevisor(service.getByUsuario("admin"));
-        estadoRevisorService.agregarEstadoRevisor(reporte);
-    }
+    // @Test
+    // public void AgregarEstadoRevisorTest() {
+    //     AddEstadoRevisorRequest reporte = new AddEstadoRevisorRequest();
+    //     reporte.setId(1);
+    //     reporte.setEstado("Revisado");
+    //     reporte.setRevisor(service.getByUsuario("test2"));
+    //     estadoRevisorService.agregarEstadoRevisor(reporte);
+    // }
 
     @Autowired
     private HallazgoTService hallazgoTService;
@@ -133,7 +135,7 @@ class GesatApplicationTests {
     @Test
     public void crearArtefactoTest() throws Exception {
         NewArtefactoRequest artefacto = new NewArtefactoRequest();
-        artefacto.setNombre("nombre");
+        artefacto.setNombre("nombreTest2");
         artefacto.setDescripcion("descripcion");
         artefacto.setDisciplina("pruebas");
         artefacto.setFase("inicio");
@@ -150,5 +152,17 @@ class GesatApplicationTests {
         artefacto.setFase("inicio");
         artefactService.edit(artefacto);
      }
+
+    @Autowired
+    private MinutaService minutaService;
+    @Test
+    public void crearMinutaTest(){
+        NewMinutaRequest minuta= new NewMinutaRequest();
+        minuta.setNombreP("nombrePTest");
+        minuta.setAcuerdos("acuerdos");
+        minuta.setEncargado(service.getByUsuario("test1"));
+        minuta.setRevisor(service.getByUsuario("test2"));
+        minutaService.save(minuta);
+    }
 
  }
