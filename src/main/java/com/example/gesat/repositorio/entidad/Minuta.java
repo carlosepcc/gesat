@@ -3,9 +3,9 @@ package com.example.gesat.repositorio.entidad;
 import javax.persistence.*;
 @Entity
 public class Minuta extends Entidad {
-    @Column
+    @Column(nullable = false)
     private String nombreP;
-    @Column
+    @Column(nullable = false)
     private String acuerdos;
     
     @OneToOne(fetch = FetchType.EAGER)

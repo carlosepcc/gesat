@@ -9,6 +9,7 @@ import com.example.gesat.controlador.respuesta.ReporteTRespuesta.ReporteTRespons
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
 import com.example.gesat.repositorio.IReporteTRepository;
+import com.example.gesat.repositorio.entidad.ReporteT;
 import com.example.gesat.servicio.ReporteTService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,10 @@ public class IReporteTService implements ReporteTService{
     }
 
     @Override
-    public ReporteTResponse save(NewReporteTRequest reporte) {
+    public ReporteTResponse save(NewReporteTRequest reporte) throws Exception {
+        if(getByNombre(reporte.toReporteT().getNombre())==null)
         return new ReporteTResponse(repository.save(reporte.toReporteT()));
+        else throw new Exception("EL nombre esta en uso");
     }
 
     @Override
@@ -50,6 +53,11 @@ public class IReporteTService implements ReporteTService{
     @Override
     public ReporteTResponse edit(UpReporteTRequest reporte) {
       return new ReporteTResponse(repository.save(reporte.upReporteT()));
+    }
+
+    @Override
+    public ReporteT getByNombre(String nombre) {
+        return repository.findByNombre(nombre);
     }
     
 }

@@ -19,6 +19,15 @@ public class AddEstadoRevisorRequest {
     public Users getRevisor() {
         return revisor;
     }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+    public void setRevisor(Users revisor) {
+        this.revisor = revisor;
+    }
     @JsonIgnore
     public ReporteT addEstadoRevisor(ReporteT reporte){
         reporte.setId(this.id);

@@ -43,6 +43,39 @@ public class UpUsuarioRequest {
     public List<Users.Rol> getRoles() {
         return roles;
     }
+    
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public void setPass(String pass) {
+        this.pass = pass;
+    }
+
+    public void setRoles(List<Users.Rol> roles) {
+        this.roles = roles;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public PasswordEncoder getEncoder() {
+        return encoder;
+    }
+
+    public void setEncoder(PasswordEncoder encoder) {
+        this.encoder = encoder;
+    }
 
     @JsonIgnore
     public Users upUsuario() {

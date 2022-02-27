@@ -2,7 +2,6 @@ package com.example.gesat.repositorio.entidad;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Lob;
 
 import lombok.AllArgsConstructor;
 
@@ -10,17 +9,15 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class Artefacto extends Entidad {
 
-	@Column
+	@Column(nullable = false)
 	private String nombre;
-	@Column
-	private Integer fase;
-	@Column
-	private Integer disciplina;
-	@Column
+	@Column(nullable = false)
+	private String fase;
+	@Column(nullable = false)
+	private String disciplina;
+	@Column(nullable = false)
 	private String descripcion;
-	@Lob
-	@Column
-	private byte[] file;
+	
 
 	public Artefacto() {
 
@@ -34,7 +31,7 @@ public class Artefacto extends Entidad {
 		this.nombre = nombre;
 	}
 
-	public Integer getFase() {
+	public String getFase() {
 		return fase;
 	}
 
@@ -46,24 +43,17 @@ public class Artefacto extends Entidad {
 		this.descripcion = descripcion;
 	}
 
-	public void setFase(Integer fase) {
+	public void setFase(String fase) {
 		this.fase = fase;
 	}
 
-	public Integer getDisciplina() {
+	public String getDisciplina() {
 		return disciplina;
 	}
 
-	public void setDisciplina(Integer disciplina) {
+	public void setDisciplina(String disciplina) {
 		this.disciplina = disciplina;
 	}
 
-	public byte[] getFile() {
-		return file;
-	}
-
-	public void setFile(byte[] file) {
-		this.file = file;
-	}
 
 }

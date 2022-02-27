@@ -9,7 +9,7 @@ public class UpHallazgoRequest {
     private String productoAf;
     private String ubicacion;
     private String descripcion;
-    private Integer tipo;
+    private String tipo;
     private LocalDate fecha;
     private String impacto;
    
@@ -27,7 +27,7 @@ public class UpHallazgoRequest {
     public String getDescripcion() {
         return descripcion;
     }
-    public Integer getTipo() {
+    public String getTipo() {
         return tipo;
     }
    public LocalDate getFecha() {
@@ -36,7 +36,27 @@ public class UpHallazgoRequest {
      public String getImpacto() {
         return impacto;
     }
-
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public void setProductoAf(String productoAf) {
+        this.productoAf = productoAf;
+    }
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+    public void setImpacto(String impacto) {
+        this.impacto = impacto;
+    }
     @JsonIgnore
     public Hallazgo upHallazgo(){
         Hallazgo hallazgo= new Hallazgo();

@@ -4,17 +4,17 @@ import javax.persistence.*;
 @Table(name = "hallasgos")
 @Entity
 public class Hallazgo extends Entidad{
-    @Column
+    @Column(nullable = false)
     private String productoAf;
-    @Column
+    @Column(nullable = false)
     private String ubicacion;
-    @Column
+    @Column(nullable = false)
     private String descripcion;
-    @Column
-    private Integer tipo;
-    @Column
+    @Column(nullable = false)
+    private String tipo;
+    @Column(nullable = false)
     private LocalDate fecha;
-    @Column
+    @Column(nullable = false)
     private String impacto;
   
     public Hallazgo() {
@@ -44,11 +44,11 @@ public class Hallazgo extends Entidad{
         this.descripcion = descripcion;
     }
 
-    public Integer getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(Integer tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

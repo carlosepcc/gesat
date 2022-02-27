@@ -7,11 +7,8 @@ public class UpReporteTRequest {
     private Integer id;
     private String nombre;
     private String descripcion;
-    private String tipo;
     private LocalDate fechaI;
     private LocalDate fechaC;
-    private Integer evaluacion;
-    
     
     public UpReporteTRequest() {
     }
@@ -25,17 +22,26 @@ public class UpReporteTRequest {
     public String getDescripcion() {
         return descripcion;
     }
-    public String getTipo() {
-        return tipo;
-    }
     public LocalDate getFechaI() {
         return fechaI;
     }
     public LocalDate getFechaC() {
         return fechaC;
     }
-    public Integer getEvaluacion() {
-        return evaluacion;
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    public void setFechaI(LocalDate fechaI) {
+        this.fechaI = fechaI;
+    }
+    public void setFechaC(LocalDate fechaC) {
+        this.fechaC = fechaC;
     }
     @JsonIgnore
     public ReporteT upReporteT(){
@@ -43,10 +49,9 @@ public class UpReporteTRequest {
         reporte.setId(this.id);
         reporte.setNombre(this.nombre);
         reporte.setDescripcion(this.descripcion);
-        reporte.setTipo(this.tipo);
         reporte.setFechaI(this.fechaI);
         reporte.setFechaC(this.fechaC);
-        reporte.setEvaluacion(this.evaluacion);
+       
         return reporte;
     }
     

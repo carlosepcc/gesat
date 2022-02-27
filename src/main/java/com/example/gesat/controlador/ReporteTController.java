@@ -37,7 +37,7 @@ public class ReporteTController {
     }
 
     @PostMapping
-    public ResponseEntity<ReporteTResponse> save(@RequestBody NewReporteTRequest reporteT) {
+    public ResponseEntity<ReporteTResponse> save(@RequestBody NewReporteTRequest reporteT) throws Exception {
         return ResponseEntity.ok(service.save(reporteT));
     }
     @PostMapping(path = "/agregarEstadoRevisor")

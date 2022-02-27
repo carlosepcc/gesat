@@ -7,7 +7,7 @@ public class HallazgoResponse {
     private String productoAf;
     private String ubicacion;
     private String descripcion;
-    private Integer tipo;
+    private String tipo;
     private LocalDate fecha;
     private String impacto;
     
@@ -34,7 +34,7 @@ public class HallazgoResponse {
         return descripcion;
     }
 
-    public Integer getTipo() {
+    public String getTipo() {
         return tipo;
     }
     public Integer getId() {

@@ -7,5 +7,5 @@ import com.example.gesat.repositorio.entidad.Artefacto;
 
 @Repository
 public interface IArtefactRepository extends JpaRepository<Artefacto, Integer> {
-
+    Artefacto findByNombre(String nombre);
 }

@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 public interface HallazgoTService  {
     List<HallazgoResponse> findAll();
     HallazgoResponse findByID(Integer id);
-    HallazgoResponse save(NewHallazgoRequest artefacto);
+    HallazgoResponse save(NewHallazgoRequest hallazgo);
     void delete(Integer[] ids);
-    HallazgoResponse edit(UpHallazgoRequest artefacto);
-    List<HallazgoResponse> findByFecha(LocalDate fecha);
+    HallazgoResponse edit(UpHallazgoRequest hallazgo);
+    List<HallazgoResponse> getByFecha(LocalDate fecha);
 }

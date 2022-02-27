@@ -9,6 +9,7 @@ import com.example.gesat.controlador.respuesta.ArtefactoResponse;
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.NewArtefactoRequest;
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoRequest;
 import com.example.gesat.repositorio.IArtefactRepository;
+import com.example.gesat.repositorio.entidad.Artefacto;
 import com.example.gesat.servicio.ArtefactService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,10 @@ public class IArtefactService implements ArtefactService {
     }
 
     @Override
-    public ArtefactoResponse save(NewArtefactoRequest artefacto) throws IOException {
+    public ArtefactoResponse save(NewArtefactoRequest artefacto) throws Exception {
+        if(getByNombre(artefacto.toArtefacto().getNombre())==null)
         return new ArtefactoResponse(repository.save(artefacto.toArtefacto()));
+        else throw new Exception("EL nombre esta en uso");
     }
 
     @Override
@@ -50,6 +53,11 @@ public class IArtefactService implements ArtefactService {
         @Override
         public ArtefactoResponse edit(UpArtefactoRequest artefacto) throws IOException {
             return new ArtefactoResponse(repository.save(artefacto.upArtefacto()));
+        }
+
+        @Override
+        public Artefacto getByNombre(String nombre) {
+            return repository.findByNombre(nombre);
         }
     
 

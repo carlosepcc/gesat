@@ -77,6 +77,7 @@ public class IUserService implements UserService {
         if (username.equals("admin")) {
             Users usuario = new Users();
             usuario.setNombre("Admin");
+            usuario.setApellidos("Admin");
             usuario.setUsername(username);
             usuario.setPass(passwordEncoder.encode("1234"));
             usuario.getRoles().add(Users.Rol.Administrador);

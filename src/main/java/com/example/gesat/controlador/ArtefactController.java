@@ -33,7 +33,7 @@ public class ArtefactController {
     }
 
     @PostMapping
-    public ResponseEntity<ArtefactoResponse> save(@RequestBody NewArtefactoRequest artefacto) throws IOException {
+    public ResponseEntity<ArtefactoResponse> save(@RequestBody NewArtefactoRequest artefacto) throws Exception {
         return ResponseEntity.ok(service.save(artefacto));
     }
     @PutMapping

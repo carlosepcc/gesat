@@ -48,6 +48,6 @@ public class HallazgoController {
     
     @GetMapping(path="/findByFecha")
     public ResponseEntity<List<HallazgoResponse>> findByFecha(LocalDate fecha)throws Exception {
-        return ResponseEntity.ok(service.findByFecha(fecha));
+        return ResponseEntity.ok(service.getByFecha(fecha));
     }
 }

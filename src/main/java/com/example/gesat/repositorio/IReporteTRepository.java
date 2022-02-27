@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IReporteTRepository extends JpaRepository<ReporteT,Integer> {
      List<ReporteT> findAllByFechaI(LocalDate fechaI);
+     ReporteT findByNombre(String nombre);
 }

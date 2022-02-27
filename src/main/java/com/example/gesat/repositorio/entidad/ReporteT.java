@@ -5,20 +5,16 @@ import javax.persistence.*;
 @Table(name = "reporte_Tecnico")
 @Entity
 public class ReporteT extends Entidad{
-    @Column
+    @Column(nullable = false)
     private String nombre;
-    @Column
+    @Column(nullable = false)
     private String descripcion;
     @Column
     private String estado;
-    @Column
-    private String tipo;
-    @Column
+    @Column(nullable = false)
     private LocalDate fechaI;
-    @Column
+    @Column(nullable = false)
     private LocalDate fechaC;
-    @Column
-    private Integer evaluacion;
   
     public ReporteT() {
     }
@@ -47,10 +43,7 @@ public class ReporteT extends Entidad{
         this.estado = estado;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-    
+  
 
     public LocalDate getFechaI() {
         return fechaI;
@@ -68,18 +61,6 @@ public class ReporteT extends Entidad{
         this.fechaC = fechaC;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public Integer getEvaluacion() {
-        return evaluacion;
-    }
-
-    public void setEvaluacion(Integer evaluacion) {
-        this.evaluacion = evaluacion;
-    }
-    
     public Users getRevisor() {
         return revisor;
     }

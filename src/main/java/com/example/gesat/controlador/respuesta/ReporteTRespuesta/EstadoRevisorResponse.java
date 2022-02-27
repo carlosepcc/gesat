@@ -10,8 +10,6 @@ public class EstadoRevisorResponse {
     private String descripcion;
     private String estado;
     private Users revisor;
-    private String tipo;
-    private Integer evaluacion;
     private LocalDate fechaI;
     private LocalDate fechaC;
     
@@ -23,10 +21,9 @@ public class EstadoRevisorResponse {
         this.descripcion=reporte.getDescripcion();
         this.estado=reporte.getEstado();
         this.revisor=reporte.getRevisor();
-        this.tipo=reporte.getTipo();
         this.fechaI=reporte.getFechaI();
         this.fechaC=reporte.getFechaC();
-        this.evaluacion=reporte.getEvaluacion();
+       
         
     }
     
@@ -42,9 +39,6 @@ public class EstadoRevisorResponse {
     public String getEstado() {
         return estado;
     }
-    public String getTipo() {
-        return tipo;
-    }
 
     public LocalDate getFechaI() {
         return fechaI;
@@ -57,7 +51,4 @@ public class EstadoRevisorResponse {
         return revisor;
     }
 
-    public Integer getEvaluacion() {
-        return evaluacion;
-    }
 }

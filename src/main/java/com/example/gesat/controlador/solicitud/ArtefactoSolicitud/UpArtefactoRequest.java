@@ -5,15 +5,12 @@ import java.io.IOException;
 
 import com.example.gesat.repositorio.entidad.Artefacto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import org.springframework.web.multipart.MultipartFile;
 public class UpArtefactoRequest {
     private Integer id;
 	private String nombre;
-	private Integer fase;
-	private Integer disciplina;  
+	private String fase;
+	private String disciplina;  
     private String descripcion;
-    private MultipartFile file;
 
     
     public UpArtefactoRequest() {     
@@ -21,10 +18,24 @@ public class UpArtefactoRequest {
     public Integer getId(){return id;}
     public String getDescripcion() {return descripcion;}
     public String getNombre() { return nombre; }
-    public Integer getFase() { return fase;}
-    public Integer getDisciplina(){return disciplina;}
-    public MultipartFile getFile() {return file;}
-   
+    public String getFase() { return fase;}
+    public String getDisciplina(){return disciplina;}
+       
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    public void setFase(String fase) {
+        this.fase = fase;
+    }
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
     @JsonIgnore
 	public Artefacto upArtefacto() throws IOException{
         Artefacto artefacto= new Artefacto();
@@ -33,7 +44,6 @@ public class UpArtefactoRequest {
         artefacto.setFase(this.fase);
         artefacto.setDisciplina(this.disciplina);
         artefacto.setDescripcion(this.descripcion);
-        artefacto.setFile(file.getBytes());
         return artefacto;
     }
 
