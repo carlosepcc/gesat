@@ -1,5 +1,7 @@
 package com.example.gesat.Seguridad;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +16,7 @@ import com.example.gesat.servicio.UserService;
 
 @Service
 public class UserDetailsSI implements UserDetailsService {
+    @Qualifier("IUserService")
     @Autowired
     private UserService repository;
 

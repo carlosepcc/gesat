@@ -1,8 +1,12 @@
 package com.example.gesat.Seguridad;
 
+import com.example.gesat.controlador.respuesta.UsuarioResponse;
+import com.example.gesat.repositorio.entidad.Users;
+import com.example.gesat.servicio.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +18,12 @@ import java.util.function.Function;
 
 @Service
 public class JwtSI {
-    
+
+    @Autowired
+    private UserService userService;
+
     private final String SECRET_KEY = "GDRE";
+
     public String extractUserName(String token) {
         String salida = null;
         try {
@@ -29,7 +37,7 @@ public class JwtSI {
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         String subject = userDetails.getUsername();
-        claims.put("roles", userDetails.getAuthorities());
+        claims.put("user", new UsuarioResponse(userService.getByUsuario(userDetails.getUsername())));
         return createToken(claims, subject);
     }
 
