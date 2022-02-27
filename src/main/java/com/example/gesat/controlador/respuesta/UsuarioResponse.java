@@ -1,4 +1,5 @@
 package com.example.gesat.controlador.respuesta;
+
 import com.example.gesat.repositorio.entidad.Users;
 
 import java.util.List;
@@ -9,10 +10,9 @@ public class UsuarioResponse {
     private Integer id;
     private String username;
     private String apellidos;
-    private String pass;
     private List<String> roles;
     private String nombre;
-    
+
     public UsuarioResponse() {
     }
 
@@ -20,22 +20,18 @@ public class UsuarioResponse {
         this.id = usuario.getId();
         this.username = usuario.getUsername();
         this.roles = usuario.getRoles().parallelStream().map(Enum::name).collect(Collectors.toList());
-        this.apellidos=usuario.getApellidos();
-        this.pass=usuario.getPass();
-        this.nombre=usuario.getNombre();
+        this.apellidos = usuario.getApellidos();
+        this.nombre = usuario.getNombre();
     }
 
     public String getApellidos() {
         return apellidos;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
 
-    public String getPass() {
-        return pass;
-    }
 
     public Integer getId() {
         return id;
