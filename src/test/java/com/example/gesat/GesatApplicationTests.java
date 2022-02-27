@@ -9,6 +9,7 @@ import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoReq
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.UpHallazgoRequest;
 import com.example.gesat.controlador.solicitud.MinutaSolicitud.NewMinutaRequest;
+import com.example.gesat.controlador.solicitud.MinutaSolicitud.UpMinutaRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisorRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.NewReporteTRequest;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.UpReporteTRequest;
@@ -164,5 +165,16 @@ class GesatApplicationTests {
         minuta.setRevisor(service.getByUsuario("test2"));
         minutaService.save(minuta);
     }
+    @Test
+    public void modificarMinutaTest(){
+        UpMinutaRequest minuta= new UpMinutaRequest();
+        minuta.setId(1);
+        minuta.setNombreP("nombrePTest12");
+        minuta.setAcuerdos("acuerdos");
+        minuta.setEncargado(service.getByUsuario("test1"));
+        minuta.setRevisor(service.getByUsuario("test2"));
+        minutaService.edit(minuta);
+    }
+    
 
  }
