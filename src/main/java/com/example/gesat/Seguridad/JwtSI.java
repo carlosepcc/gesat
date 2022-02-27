@@ -1,7 +1,6 @@
 package com.example.gesat.Seguridad;
 
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
-import com.example.gesat.repositorio.entidad.Users;
 import com.example.gesat.servicio.UserService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -9,7 +8,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
-
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.HashMap;
@@ -37,7 +35,7 @@ public class JwtSI {
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
         String subject = userDetails.getUsername();
-        claims.put("user", new UsuarioResponse(userService.getByUsuario(userDetails.getUsername())));
+        claims.put("user", new UsuarioResponse(userService.getByUsuario(userDetails.getUsername()))); 
         return createToken(claims, subject);
     }
 
