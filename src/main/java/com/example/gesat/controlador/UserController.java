@@ -36,7 +36,11 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario ) throws Exception {
+        try {
         return ResponseEntity.ok(service.save(usuario) );
+        } catch (Exception e) {
+           throw new Exception("El elemento ya existe",e);
+        }
     }
 
     @PutMapping
