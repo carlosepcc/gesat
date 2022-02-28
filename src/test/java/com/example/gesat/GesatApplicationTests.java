@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.gesat.Seguridad.LoginC;
+import com.example.gesat.Seguridad.LoginSo;
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.NewArtefactoRequest;
 import com.example.gesat.controlador.solicitud.ArtefactoSolicitud.UpArtefactoRequest;
 import com.example.gesat.controlador.solicitud.HallazgoSolicitud.NewHallazgoRequest;
@@ -174,6 +176,17 @@ class GesatApplicationTests {
         minuta.setEncargado(service.getByUsuario("test1"));
         minuta.setRevisor(service.getByUsuario("test2"));
         minutaService.edit(minuta);
+    }
+
+    @Autowired
+    private LoginC loginC;
+    @Test
+    public void logginTest() throws Exception{
+        LoginSo l = new LoginSo();
+        l.setUsuario("admin");
+        l.setContrasenna("1234");
+        loginC.createAuthenticationToken(l);
+
     }
     
 

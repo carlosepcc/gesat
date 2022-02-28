@@ -16,4 +16,13 @@ public class LoginSo {
     public String getContrasenna() {
         return contrasenna;
     }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public void setContrasenna(String contrasenna) {
+        this.contrasenna = contrasenna;
+    }
+    
 }
