@@ -1,6 +1,5 @@
 package com.example.gesat.controlador;
 import java.util.List;
-
 import com.example.gesat.controlador.respuesta.ReporteTRespuesta.EstadoRevisorResponse;
 import com.example.gesat.controlador.respuesta.ReporteTRespuesta.ReporteTResponse;
 import com.example.gesat.controlador.solicitud.ReporteTecnicoSolicitud.AddEstadoRevisorRequest;
@@ -42,7 +41,7 @@ public class ReporteTController {
         return ResponseEntity.ok(service.save(reporteT));
        }
        catch (Exception e) {
-        throw new Exception("El elemento ya existe",e); 
+            throw new Exception("El elemento ya existe",e); 
        }
     }
     @PostMapping(path = "/agregarEstadoRevisor")
