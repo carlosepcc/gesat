@@ -51,7 +51,7 @@ public class ReporteTController {
     }
    
     @PutMapping
-    public ResponseEntity<ReporteTResponse> edit(@RequestBody UpReporteTRequest reporteT) {
+    public ResponseEntity<EstadoRevisorResponse> edit(@RequestBody UpReporteTRequest reporteT) {
         return ResponseEntity.ok(service.edit(reporteT));
     }
 

@@ -17,7 +17,7 @@ public interface ReporteTService {
     EstadoRevisorResponse findByID(Integer id);
     ReporteTResponse save(NewReporteTRequest reporteT) throws Exception;
     void delete(Integer[] ids);
-    ReporteTResponse edit(UpReporteTRequest reporteT);
+    EstadoRevisorResponse edit(UpReporteTRequest reporteT);
     ReporteT getByNombre(String nombre);
 
 }

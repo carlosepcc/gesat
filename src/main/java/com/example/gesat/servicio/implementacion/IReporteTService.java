@@ -51,8 +51,8 @@ public class IReporteTService implements ReporteTService{
     }
 
     @Override
-    public ReporteTResponse edit(UpReporteTRequest reporte) {
-      return new ReporteTResponse(repository.save(reporte.upReporteT()));
+    public EstadoRevisorResponse edit(UpReporteTRequest reporte) {
+      return new EstadoRevisorResponse(repository.save(reporte.upReporteT()));
     }
 
     @Override
