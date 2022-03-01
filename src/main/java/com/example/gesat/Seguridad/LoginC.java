@@ -25,7 +25,7 @@ public class LoginC {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsuario(), request.getContrasenna()));
         } catch (Exception e) {
-            throw new Exception("Usuario o Contraseña Incorrecta", e);
+            throw new Exception("Credenciales Inválidas", e);
         }
         final UserDetails userDetails = serviceUserDetails.loadUserByUsername(request.getUsuario());
         final String jwt = serviceJwt.generateToken(userDetails);

@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +35,7 @@ public class IUserService implements UserService {
 
     @Override
     public UsuarioResponse save(NewUsuarioRequest usuario) throws Exception {
-      if(getByUsuario(usuario.toUsuario().getUsername())==null) 
+      if(getByUsuario(usuario.toUsuario().getUsername()) == null) 
             return new UsuarioResponse(repository.save(usuario.toUsuario()));
         else throw new Exception("El nombre de usuario ya está en uso");
             }
@@ -49,14 +48,17 @@ public class IUserService implements UserService {
     }
 
     @Override
-    public UsuarioResponse findByID(Integer id) {
-        return new UsuarioResponse(repository.getById(id));
-
+    public Users findByID(Integer id) {
+        return repository.findById(id).get();
     }
 
     @Override
     public UsuarioResponse edit(UpUsuarioRequest usuario) {
-        return new UsuarioResponse(repository.save(usuario.upUsuario()));
+       if( usuario.getPass()==null){
+       usuario.setPass(findByID(usuario.getId()).getPass());
+            return new UsuarioResponse(repository.save(usuario.usPass()));
+       }
+       else return new UsuarioResponse(repository.save(usuario.upUsuario())); 
     }
 
     @Override

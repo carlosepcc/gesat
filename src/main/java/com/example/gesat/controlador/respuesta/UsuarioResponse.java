@@ -32,7 +32,6 @@ public class UsuarioResponse {
         return nombre;
     }
 
-
     public Integer getId() {
         return id;
     }

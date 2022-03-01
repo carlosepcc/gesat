@@ -43,8 +43,6 @@ public class ReporteT extends Entidad{
         this.estado = estado;
     }
 
-  
-
     public LocalDate getFechaI() {
         return fechaI;
     }

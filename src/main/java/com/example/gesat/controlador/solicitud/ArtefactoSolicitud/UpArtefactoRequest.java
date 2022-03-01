@@ -1,8 +1,5 @@
 
 package com.example.gesat.controlador.solicitud.ArtefactoSolicitud;
-
-import java.io.IOException;
-
 import com.example.gesat.repositorio.entidad.Artefacto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 public class UpArtefactoRequest {
@@ -37,7 +34,7 @@ public class UpArtefactoRequest {
         this.descripcion = descripcion;
     }
     @JsonIgnore
-	public Artefacto upArtefacto() throws IOException{
+	public Artefacto upArtefacto() {
         Artefacto artefacto= new Artefacto();
         artefacto.setId(this.id);
         artefacto.setNombre(this.nombre);

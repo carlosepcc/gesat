@@ -3,6 +3,7 @@ package com.example.gesat.controlador;
 import com.example.gesat.controlador.respuesta.UsuarioResponse;
 import com.example.gesat.controlador.solicitud.UsuarioSolicitud.NewUsuarioRequest;
 import com.example.gesat.controlador.solicitud.UsuarioSolicitud.UpUsuarioRequest;
+import com.example.gesat.repositorio.entidad.Users;
 import com.example.gesat.servicio.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,10 +23,10 @@ public class UserController {
     @GetMapping()
     public ResponseEntity<List<UsuarioResponse>> findAll() {
         return ResponseEntity.ok(service.findAll());
-    }
+    }  
 
     @GetMapping(path = "/findById")
-    public ResponseEntity<UsuarioResponse> findByID(Integer id) {
+    public ResponseEntity<Users> findByID(Integer id) {
         return ResponseEntity.ok(service.findByID(id));
     }
 
@@ -36,12 +37,13 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<UsuarioResponse> save(@RequestBody NewUsuarioRequest usuario ) throws Exception {
-        try {
-        return ResponseEntity.ok(service.save(usuario) );
-        } catch (Exception e) {
-           throw new Exception("El elemento ya existe",e);
-        }
-    }
+        try{
+            return ResponseEntity.ok(service.save(usuario));
+           }
+           catch (Exception e) {
+            throw new Exception("El elemento ya existe",e); 
+           }
+     }
 
     @PutMapping
     public ResponseEntity<UsuarioResponse> edit(@RequestBody UpUsuarioRequest usuario) {

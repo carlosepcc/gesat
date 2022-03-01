@@ -3,18 +3,20 @@ package com.example.gesat.controlador.solicitud.UsuarioSolicitud;
 import java.util.List;
 import com.example.gesat.repositorio.entidad.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class NewUsuarioRequest {
-    private String username;
+
+    private String nombre;
     private String apellidos;
+    private String username;
     private String pass;
     private List<Users.Rol> roles;
-    private String nombre;
+    
 
-    PasswordEncoder encoder = new BCryptPasswordEncoder();
+  PasswordEncoder encoder= new BCryptPasswordEncoder();
+
     
     public NewUsuarioRequest() {
     }
@@ -57,14 +59,6 @@ public class NewUsuarioRequest {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public PasswordEncoder getEncoder() {
-        return encoder;
-    }
-
-    public void setEncoder(PasswordEncoder encoder) {
-        this.encoder = encoder;
     }
 
     @JsonIgnore

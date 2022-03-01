@@ -38,7 +38,12 @@ public class ReporteTController {
 
     @PostMapping
     public ResponseEntity<ReporteTResponse> save(@RequestBody NewReporteTRequest reporteT) throws Exception {
+       try{
         return ResponseEntity.ok(service.save(reporteT));
+       }
+       catch (Exception e) {
+        throw new Exception("El elemento ya existe",e); 
+       }
     }
     @PostMapping(path = "/agregarEstadoRevisor")
         public ResponseEntity<EstadoRevisorResponse> agregarEstadoRevisor(@RequestBody AddEstadoRevisorRequest reporte) {
